@@ -1,4 +1,4 @@
-import { BookOpen, Scale, ArrowLeftRight, FileText, Landmark, HandCoins, PiggyBank, TrendingDown, TrendingUp } from "lucide-react";
+import { BookOpen, Scale, ArrowLeftRight, FileText, BarChart3, ClipboardList, Landmark, HandCoins, PiggyBank, TrendingDown, TrendingUp } from "lucide-react";
 
 const concepts = [
   {
@@ -20,6 +20,16 @@ const concepts = [
     icon: FileText,
     title: "The Trial Balance",
     description: "A listing of all account balances to verify that total debits equal total credits, ensuring the books are in balance.",
+  },
+  {
+    icon: BarChart3,
+    title: "Statement of Profit or Loss",
+    description: "Summarises revenue earned and expenses incurred over a period to calculate the net profit or loss of the business.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Statement of Financial Position",
+    description: "A snapshot of what the business owns (assets), owes (liabilities), and the owner's residual interest (equity) at a point in time.",
   },
 ];
 
@@ -67,7 +77,7 @@ const ConceptCards = () => (
       <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Core Principles</p>
       <h2 className="text-3xl md:text-4xl font-bold text-foreground">Key Concepts</h2>
     </div>
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       {concepts.map((c) => (
         <div key={c.title} className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
