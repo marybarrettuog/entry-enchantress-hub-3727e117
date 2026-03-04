@@ -7,6 +7,7 @@ const navItems = [
   { id: "t-accounts", label: "T-Accounts" },
   { id: "trial-balance", label: "Trial Balance" },
   { id: "financial-statements", label: "Statements" },
+  { id: "classification-quiz", label: "Classify" },
   { id: "rules", label: "Rules" },
   { id: "practice", label: "Practice" },
   { id: "quiz", label: "Quiz" },
