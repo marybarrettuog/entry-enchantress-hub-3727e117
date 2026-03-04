@@ -8,6 +8,7 @@ import FinancialStatements from "@/components/FinancialStatements";
 import DebitCreditRules from "@/components/DebitCreditRules";
 import PracticeExamples from "@/components/PracticeExamples";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
+import ClassificationQuiz from "@/components/ClassificationQuiz";
 
 const Index = () => (
   <div className="min-h-screen bg-background scroll-smooth">
@@ -18,6 +19,7 @@ const Index = () => (
     <div id="t-accounts"><TAccountVisual /></div>
     <div id="trial-balance"><TrialBalance /></div>
     <div id="financial-statements"><FinancialStatements /></div>
+    <div id="classification-quiz"><ClassificationQuiz /></div>
     <div id="rules"><DebitCreditRules /></div>
     <div id="practice"><PracticeExamples /></div>
     <div id="quiz"><InteractiveQuiz /></div>
