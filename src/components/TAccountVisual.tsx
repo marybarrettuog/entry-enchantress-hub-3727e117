@@ -19,34 +19,34 @@ const TAccountVisual = () => (
             <div className="p-4">
               <p className="text-accent font-mono text-xs uppercase tracking-wider mb-3 font-semibold">Debit (Dr.)</p>
               <div className="space-y-2 text-sm">
-                <div className="flex justify-between"><span className="text-muted-foreground">Capital</span><span className="font-mono font-semibold text-foreground">£10,000</span></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Sales</span><span className="font-mono font-semibold text-foreground">£2,500</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Capital</span><span className="font-mono font-semibold text-foreground">€10,000</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Sales</span><span className="font-mono font-semibold text-foreground">€2,500</span></div>
               </div>
             </div>
             <div className="p-4">
               <p className="text-accent font-mono text-xs uppercase tracking-wider mb-3 font-semibold">Credit (Cr.)</p>
               <div className="space-y-2 text-sm">
-                <div className="flex justify-between"><span className="text-muted-foreground">Rent</span><span className="font-mono font-semibold text-foreground">£1,200</span></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Supplies</span><span className="font-mono font-semibold text-foreground">£800</span></div>
-                <div className="flex justify-between"><span className="text-accent font-semibold italic">Bal c/d</span><span className="font-mono font-semibold text-accent">£10,500</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Rent</span><span className="font-mono font-semibold text-foreground">€1,200</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Supplies</span><span className="font-mono font-semibold text-foreground">€800</span></div>
+                <div className="flex justify-between"><span className="text-accent font-semibold italic">Bal c/d</span><span className="font-mono font-semibold text-accent">€10,500</span></div>
               </div>
             </div>
           </div>
           <div className="border-t-2 border-foreground grid grid-cols-2 divide-x divide-border">
             <div className="px-4 py-2 flex justify-between bg-muted/50">
               <span className="text-sm font-bold text-foreground"></span>
-              <span className="font-mono font-bold text-foreground">£12,500</span>
+              <span className="font-mono font-bold text-foreground">€12,500</span>
             </div>
             <div className="px-4 py-2 flex justify-between bg-muted/50">
               <span className="text-sm font-bold text-foreground"></span>
-              <span className="font-mono font-bold text-foreground">£12,500</span>
+              <span className="font-mono font-bold text-foreground">€12,500</span>
             </div>
           </div>
           <div className="border-t border-border grid grid-cols-2 divide-x divide-border">
             <div className="px-4 py-2">
               <div className="flex justify-between text-sm">
                 <span className="text-success font-semibold italic">Bal b/d</span>
-                <span className="font-mono font-bold text-success">£10,500</span>
+                <span className="font-mono font-bold text-success">€10,500</span>
               </div>
             </div>
             <div className="px-4 py-2"></div>
@@ -63,24 +63,24 @@ const TAccountVisual = () => (
               <p className="text-accent font-mono text-xs uppercase tracking-wider mb-3 font-semibold">Debit (Dr.)</p>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between text-muted-foreground italic"><span>—</span></div>
-                <div className="flex justify-between"><span className="text-accent font-semibold italic">Bal c/d</span><span className="font-mono font-semibold text-accent">£10,000</span></div>
+                <div className="flex justify-between"><span className="text-accent font-semibold italic">Bal c/d</span><span className="font-mono font-semibold text-accent">€10,000</span></div>
               </div>
             </div>
             <div className="p-4">
               <p className="text-accent font-mono text-xs uppercase tracking-wider mb-3 font-semibold">Credit (Cr.)</p>
               <div className="space-y-2 text-sm">
-                <div className="flex justify-between"><span className="text-muted-foreground">Cash invested</span><span className="font-mono font-semibold text-foreground">£10,000</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Cash invested</span><span className="font-mono font-semibold text-foreground">€10,000</span></div>
               </div>
             </div>
           </div>
           <div className="border-t-2 border-foreground grid grid-cols-2 divide-x divide-border">
             <div className="px-4 py-2 flex justify-between bg-muted/50">
               <span></span>
-              <span className="font-mono font-bold text-foreground">£10,000</span>
+              <span className="font-mono font-bold text-foreground">€10,000</span>
             </div>
             <div className="px-4 py-2 flex justify-between bg-muted/50">
               <span></span>
-              <span className="font-mono font-bold text-foreground">£10,000</span>
+              <span className="font-mono font-bold text-foreground">€10,000</span>
             </div>
           </div>
           <div className="border-t border-border grid grid-cols-2 divide-x divide-border">
@@ -88,7 +88,7 @@ const TAccountVisual = () => (
             <div className="px-4 py-2">
               <div className="flex justify-between text-sm">
                 <span className="text-info font-semibold italic">Bal b/d</span>
-                <span className="font-mono font-bold text-info">£10,000</span>
+                <span className="font-mono font-bold text-info">€10,000</span>
               </div>
             </div>
           </div>
