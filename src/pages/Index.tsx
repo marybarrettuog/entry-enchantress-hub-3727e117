@@ -3,6 +3,7 @@ import ConceptCards from "@/components/ConceptCards";
 import AccountingEquation from "@/components/AccountingEquation";
 import TAccountVisual from "@/components/TAccountVisual";
 import TrialBalance from "@/components/TrialBalance";
+import FinancialStatements from "@/components/FinancialStatements";
 import DebitCreditRules from "@/components/DebitCreditRules";
 import PracticeExamples from "@/components/PracticeExamples";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
@@ -14,6 +15,7 @@ const Index = () => (
     <AccountingEquation />
     <TAccountVisual />
     <TrialBalance />
+    <FinancialStatements />
     <DebitCreditRules />
     <PracticeExamples />
     <InteractiveQuiz />
