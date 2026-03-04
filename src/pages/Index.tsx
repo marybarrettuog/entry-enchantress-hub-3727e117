@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import ConceptCards from "@/components/ConceptCards";
 import AccountingEquation from "@/components/AccountingEquation";
 import TAccountVisual from "@/components/TAccountVisual";
+import TrialBalance from "@/components/TrialBalance";
 import DebitCreditRules from "@/components/DebitCreditRules";
 import PracticeExamples from "@/components/PracticeExamples";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
@@ -12,6 +13,7 @@ const Index = () => (
     <ConceptCards />
     <AccountingEquation />
     <TAccountVisual />
+    <TrialBalance />
     <DebitCreditRules />
     <PracticeExamples />
     <InteractiveQuiz />
