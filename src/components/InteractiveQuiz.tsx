@@ -7,7 +7,8 @@ interface QuizQuestion {
   correctCredit: string;
   accounts: string[];
   explanation: string;
-  rules: number[];
+  debitRule: string;
+  creditRule: string;
 }
 
 const questionBank: QuizQuestion[] = [
@@ -16,168 +17,182 @@ const questionBank: QuizQuestion[] = [
     correctDebit: "Cash",
     correctCredit: "Capital",
     accounts: ["Cash", "Capital", "Bank", "Drawings", "Sales Revenue", "Purchases"],
-    explanation: "Cash (asset) increases — debit (Rule 1). Capital (equity) increases — credit (Rule 1).",
-    rules: [1],
+    explanation: "Cash (asset) increases — debit. Capital (equity/liability) increases — credit.",
+    debitRule: "Asset ↑",
+    creditRule: "Liability ↑",
   },
   {
     transaction: "Business pays €800 rent by cheque",
     correctDebit: "Rent Expense",
     correctCredit: "Bank",
     accounts: ["Rent Expense", "Bank", "Cash", "Loan", "Accounts Payable", "Capital"],
-    explanation: "Rent Expense increases — debit (Rule 2). Money leaves the bank — credit (Rule 3).",
-    rules: [2, 3],
+    explanation: "Rent Expense increases — debit. Money leaves the bank — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Bank Out",
   },
   {
     transaction: "Sold goods for €3,500 on credit",
     correctDebit: "Accounts Receivable",
     correctCredit: "Sales Revenue",
     accounts: ["Accounts Receivable", "Sales Revenue", "Cash", "Purchases", "Bank", "Capital"],
-    explanation: "Accounts Receivable (asset) increases — debit (Rule 1). Sales Revenue (gain) increases — credit (Rule 2).",
-    rules: [1, 2],
+    explanation: "Accounts Receivable (asset) increases — debit. Sales Revenue (gain) increases — credit.",
+    debitRule: "Asset ↑",
+    creditRule: "Gain ↑",
   },
   {
     transaction: "Bought inventory worth €2,000 on credit",
     correctDebit: "Purchases",
     correctCredit: "Accounts Payable",
     accounts: ["Purchases", "Accounts Payable", "Cash", "Sales Revenue", "Bank", "Inventory"],
-    explanation: "Purchases (expense) increases — debit (Rule 2). Accounts Payable (liability) increases — credit (Rule 1).",
-    rules: [1, 2],
+    explanation: "Purchases (expense) increases — debit. Accounts Payable (liability) increases — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Liability ↑",
   },
   {
     transaction: "Took out a bank loan of €15,000",
     correctDebit: "Bank",
     correctCredit: "Loan",
     accounts: ["Bank", "Loan", "Cash", "Capital", "Interest Expense", "Accounts Payable"],
-    explanation: "Money comes into the bank — debit (Rule 3). Loan (liability) increases — credit (Rule 1).",
-    rules: [1, 3],
+    explanation: "Money comes into the bank — debit. Loan (liability) increases — credit.",
+    debitRule: "Bank In",
+    creditRule: "Liability ↑",
   },
   {
     transaction: "Paid wages €1,600 by bank transfer",
     correctDebit: "Wages Expense",
     correctCredit: "Bank",
     accounts: ["Wages Expense", "Bank", "Cash", "Accruals", "Capital", "Drawings"],
-    explanation: "Wages Expense increases — debit (Rule 2). Money leaves the bank — credit (Rule 3).",
-    rules: [2, 3],
+    explanation: "Wages Expense increases — debit. Money leaves the bank — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Bank Out",
   },
   {
     transaction: "Recorded depreciation of €2,000 on equipment",
     correctDebit: "Depreciation Expense",
     correctCredit: "Accumulated Depreciation",
     accounts: ["Depreciation Expense", "Accumulated Depreciation", "Equipment", "Bank", "Cash", "Repairs Expense"],
-    explanation: "Depreciation Expense increases — debit (Rule 2). Accumulated Depreciation (contra-asset, reducing asset value) increases — credit (Rule 1).",
-    rules: [1, 2],
+    explanation: "Depreciation Expense increases — debit. Accumulated Depreciation (contra-asset, reducing asset value) increases — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Asset ↓",
   },
   {
     transaction: "Customer pays €4,500 owed into our bank account",
     correctDebit: "Bank",
     correctCredit: "Accounts Receivable",
     accounts: ["Bank", "Accounts Receivable", "Cash", "Sales Revenue", "Capital", "Accounts Payable"],
-    explanation: "Money comes into the bank — debit (Rule 3). Accounts Receivable (asset) decreases — credit (Rule 1).",
-    rules: [1, 3],
+    explanation: "Money comes into the bank — debit. Accounts Receivable (asset) decreases — credit.",
+    debitRule: "Bank In",
+    creditRule: "Asset ↓",
   },
   {
     transaction: "Wrote off a bad debt of €400",
     correctDebit: "Bad Debts Expense",
     correctCredit: "Accounts Receivable",
     accounts: ["Bad Debts Expense", "Accounts Receivable", "Bank", "Cash", "Provision for Bad Debts", "Sales Revenue"],
-    explanation: "Bad Debts Expense increases — debit (Rule 2). Accounts Receivable (asset) decreases — credit (Rule 1).",
-    rules: [1, 2],
+    explanation: "Bad Debts Expense increases — debit. Accounts Receivable (asset) decreases — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Asset ↓",
   },
   {
     transaction: "Owner withdraws €500 cash for personal use",
     correctDebit: "Drawings",
     correctCredit: "Cash",
     accounts: ["Drawings", "Cash", "Bank", "Capital", "Wages Expense", "Loan"],
-    explanation: "Drawings (reduction of equity) increases — debit (Rule 1). Cash (asset) decreases — credit (Rule 1).",
-    rules: [1],
+    explanation: "Drawings (reduction of equity/liability) increases — debit. Cash (asset) decreases — credit.",
+    debitRule: "Liability ↓",
+    creditRule: "Asset ↓",
   },
   {
     transaction: "Paid supplier €3,000 by bank transfer",
     correctDebit: "Accounts Payable",
     correctCredit: "Bank",
     accounts: ["Accounts Payable", "Bank", "Cash", "Purchases", "Loan", "Capital"],
-    explanation: "Accounts Payable (liability) decreases — debit (Rule 1). Money leaves the bank — credit (Rule 3).",
-    rules: [1, 3],
+    explanation: "Accounts Payable (liability) decreases — debit. Money leaves the bank — credit.",
+    debitRule: "Liability ↓",
+    creditRule: "Bank Out",
   },
   {
     transaction: "Accrued wages of €1,200 at year-end",
     correctDebit: "Wages Expense",
     correctCredit: "Accruals",
     accounts: ["Wages Expense", "Accruals", "Bank", "Cash", "Accounts Payable", "Prepayments"],
-    explanation: "Wages Expense increases — debit (Rule 2). Accruals (liability) increases — credit (Rule 1).",
-    rules: [1, 2],
+    explanation: "Wages Expense increases — debit. Accruals (liability) increases — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Liability ↑",
   },
   {
     transaction: "Received rent income €900 into bank",
     correctDebit: "Bank",
     correctCredit: "Rent Received",
     accounts: ["Bank", "Rent Received", "Rent Expense", "Cash", "Accounts Receivable", "Capital"],
-    explanation: "Money comes into the bank — debit (Rule 3). Rent Received (gain) increases — credit (Rule 2).",
-    rules: [2, 3],
+    explanation: "Money comes into the bank — debit. Rent Received (gain) increases — credit.",
+    debitRule: "Bank In",
+    creditRule: "Gain ↑",
   },
   {
     transaction: "Prepaid insurance €1,500 by cheque",
     correctDebit: "Prepayments",
     correctCredit: "Bank",
     accounts: ["Prepayments", "Bank", "Insurance Expense", "Cash", "Accruals", "Accounts Payable"],
-    explanation: "Prepayments (asset) increases — debit (Rule 1). Money leaves the bank — credit (Rule 3).",
-    rules: [1, 3],
+    explanation: "Prepayments (asset) increases — debit. Money leaves the bank — credit.",
+    debitRule: "Asset ↑",
+    creditRule: "Bank Out",
   },
   {
     transaction: "Sold goods for €1,800 cash",
     correctDebit: "Cash",
     correctCredit: "Sales Revenue",
     accounts: ["Cash", "Sales Revenue", "Bank", "Accounts Receivable", "Purchases", "Capital"],
-    explanation: "Cash (asset) increases — debit (Rule 1). Sales Revenue (gain) increases — credit (Rule 2).",
-    rules: [1, 2],
+    explanation: "Cash (asset) increases — debit. Sales Revenue (gain) increases — credit.",
+    debitRule: "Asset ↑",
+    creditRule: "Gain ↑",
   },
   {
     transaction: "Repaid €2,500 of bank loan by transfer",
     correctDebit: "Loan",
     correctCredit: "Bank",
     accounts: ["Loan", "Bank", "Interest Expense", "Cash", "Capital", "Accounts Payable"],
-    explanation: "Loan (liability) decreases — debit (Rule 1). Money leaves the bank — credit (Rule 3).",
-    rules: [1, 3],
+    explanation: "Loan (liability) decreases — debit. Money leaves the bank — credit.",
+    debitRule: "Liability ↓",
+    creditRule: "Bank Out",
   },
   {
     transaction: "Paid loan interest €300 by direct debit",
     correctDebit: "Interest Expense",
     correctCredit: "Bank",
     accounts: ["Interest Expense", "Bank", "Loan", "Cash", "Capital", "Accruals"],
-    explanation: "Interest Expense increases — debit (Rule 2). Money leaves the bank — credit (Rule 3).",
-    rules: [2, 3],
+    explanation: "Interest Expense increases — debit. Money leaves the bank — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Bank Out",
   },
   {
     transaction: "Returned €600 of faulty goods to supplier (bought on credit)",
     correctDebit: "Accounts Payable",
     correctCredit: "Purchases Returns",
     accounts: ["Accounts Payable", "Purchases Returns", "Purchases", "Cash", "Bank", "Sales Returns"],
-    explanation: "Accounts Payable (liability) decreases — debit (Rule 1). Purchases Returns (gain/reduction of expense) increases — credit (Rule 2).",
-    rules: [1, 2],
+    explanation: "Accounts Payable (liability) decreases — debit. Purchases Returns (gain/reduction of expense) increases — credit.",
+    debitRule: "Liability ↓",
+    creditRule: "Gain ↑",
   },
   {
     transaction: "Paid electricity bill €250 in cash",
     correctDebit: "Electricity Expense",
     correctCredit: "Cash",
     accounts: ["Electricity Expense", "Cash", "Bank", "Accruals", "Accounts Payable", "Rent Expense"],
-    explanation: "Electricity Expense increases — debit (Rule 2). Cash (asset) decreases — credit (Rule 1).",
-    rules: [1, 2],
+    explanation: "Electricity Expense increases — debit. Cash (asset) decreases — credit.",
+    debitRule: "Expense ↑",
+    creditRule: "Asset ↓",
   },
   {
     transaction: "Owner introduces equipment worth €7,000 into the business",
     correctDebit: "Equipment",
     correctCredit: "Capital",
     accounts: ["Equipment", "Capital", "Bank", "Cash", "Loan", "Accounts Payable"],
-    explanation: "Equipment (asset) increases — debit (Rule 1). Capital (equity) increases — credit (Rule 1).",
-    rules: [1],
+    explanation: "Equipment (asset) increases — debit. Capital (equity) increases — credit.",
+    debitRule: "Asset ↑",
+    creditRule: "Liability ↑",
   },
 ];
-
-const ruleLabels: Record<number, string> = {
-  1: "Rule 1: Dr. Assets / Cr. Liabilities",
-  2: "Rule 2: Dr. Expenses / Cr. Gains",
-  3: "Rule 3: Dr. Bank In / Cr. Bank Out",
-};
 
 const QUIZ_SIZE = 10;
 
@@ -203,7 +218,6 @@ const InteractiveQuiz = () => {
   const shuffledAccounts = useMemo(() => shuffle(question.accounts), [question]);
 
   const isCorrect = submitted && selectedDebit === question.correctDebit && selectedCredit === question.correctCredit;
-  const isWrong = submitted && !isCorrect;
 
   const handleSubmit = useCallback(() => {
     if (!selectedDebit || !selectedCredit || submitted) return;
@@ -249,10 +263,7 @@ const InteractiveQuiz = () => {
             <div className="w-full bg-muted rounded-full h-3 mb-6">
               <div
                 className="h-3 rounded-full transition-all duration-700"
-                style={{
-                  width: `${pct}%`,
-                  background: `hsl(var(--accent))`,
-                }}
+                style={{ width: `${pct}%`, background: `hsl(var(--accent))` }}
               />
             </div>
             <button onClick={handleRestart} className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
@@ -284,10 +295,7 @@ const InteractiveQuiz = () => {
           <div className="w-full bg-muted rounded-full h-2 mb-8">
             <div
               className="h-2 rounded-full transition-all duration-500"
-              style={{
-                width: `${((currentIndex) / quizQuestions.length) * 100}%`,
-                background: `hsl(var(--accent))`,
-              }}
+              style={{ width: `${((currentIndex) / quizQuestions.length) * 100}%`, background: `hsl(var(--accent))` }}
             />
           </div>
 
@@ -368,10 +376,13 @@ const InteractiveQuiz = () => {
                   </p>
                 </div>
                 <p className="text-muted-foreground text-sm mb-2">{question.explanation}</p>
-                <div className="flex flex-wrap gap-2">
-                  {question.rules.map((r) => (
-                    <span key={r} className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">{ruleLabels[r]}</span>
-                  ))}
+                <div className="flex gap-2">
+                  <span className="text-xs font-mono bg-success/10 text-success px-2 py-1 rounded">
+                    Dr. {question.debitRule}
+                  </span>
+                  <span className="text-xs font-mono bg-info/10 text-info px-2 py-1 rounded">
+                    Cr. {question.creditRule}
+                  </span>
                 </div>
               </div>
             )}
