@@ -26,8 +26,19 @@ const AccountingEquation = () => (
         </div>
       </div>
 
+      {/* Explanation of basic equation */}
+      <div className="bg-muted/50 border border-border rounded-lg p-6 mb-14">
+        <p className="text-foreground leading-relaxed">
+          This equation is the backbone of double-entry bookkeeping. Every single transaction you record must keep this equation in balance. 
+          When you debit one account, you must credit another by the same amount — ensuring that the total assets always equal the sum of liabilities and equity.
+        </p>
+        <p className="text-muted-foreground text-sm mt-4 italic">
+          Think of it like a see-saw: both sides must always weigh the same.
+        </p>
+      </div>
+
       {/* Extended equation */}
-      <div className="mb-12">
+      <div className="mb-10">
         <p className="text-center text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Extended Equation — Expanding Equity</p>
         <div className="flex items-center justify-center gap-3 md:gap-5 flex-wrap">
           <div className="bg-card border-2 border-accent rounded-lg px-5 py-4 text-center min-w-[120px]">
@@ -62,16 +73,9 @@ const AccountingEquation = () => (
 
       <div className="bg-muted/50 border border-border rounded-lg p-6">
         <p className="text-foreground leading-relaxed">
-          This equation is the backbone of double-entry bookkeeping. Every single transaction you record must keep this equation in balance. 
-          When you debit one account, you must credit another by the same amount — ensuring that the total assets always equal the sum of liabilities and equity.
-        </p>
-        <p className="text-foreground leading-relaxed mt-3">
           <strong>Equity is not static.</strong> It grows when the business earns <span className="text-success font-semibold">income</span> and 
           shrinks when it incurs <span className="text-destructive font-semibold">expenses</span> or when the owner makes <span className="text-destructive font-semibold">drawings</span>. 
-          The net effect of income minus expenses is the <em>profit (or loss)</em> for the period.
-        </p>
-        <p className="text-muted-foreground text-sm mt-4 italic">
-          Think of it like a see-saw: both sides must always weigh the same.
+          The net effect of income minus expenses is the <em>profit (or loss)</em> for the period, which is added to equity.
         </p>
       </div>
     </div>
