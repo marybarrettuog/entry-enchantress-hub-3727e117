@@ -1,4 +1,5 @@
 import TopicLayout from "@/components/TopicLayout";
+import AccountingCycleOrder from "@/components/AccountingCycleOrder";
 import ClassificationQuiz from "@/components/ClassificationQuiz";
 import PracticeExamples from "@/components/PracticeExamples";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
@@ -9,7 +10,9 @@ const TestKnowledgePage = () => (
     description="Classify accounts, work through real transactions, and challenge yourself with quiz questions."
   >
     <div className="space-y-0">
-      <section className="py-12 md:py-16">
+      <AccountingCycleOrder />
+
+      <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-6 max-w-5xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2 text-center">
             Classification Quiz
@@ -21,7 +24,7 @@ const TestKnowledgePage = () => (
         <ClassificationQuiz />
       </section>
 
-      <section className="py-12 md:py-16 bg-muted/30">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-6 max-w-5xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2 text-center">
             Practice Examples
@@ -33,7 +36,7 @@ const TestKnowledgePage = () => (
         <PracticeExamples />
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-6 max-w-5xl">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2 text-center">
             Interactive Quiz
