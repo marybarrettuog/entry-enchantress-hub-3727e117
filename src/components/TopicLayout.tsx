@@ -1,13 +1,14 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface TopicLayoutProps {
   children: React.ReactNode;
   title: string;
   description?: string;
+  nextTopic?: { to: string; title: string };
 }
 
-const TopicLayout = ({ children, title, description }: TopicLayoutProps) => (
+const TopicLayout = ({ children, title, description, nextTopic }: TopicLayoutProps) => (
   <div className="min-h-screen bg-background">
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto px-6 flex items-center h-14 gap-4">
@@ -33,6 +34,25 @@ const TopicLayout = ({ children, title, description }: TopicLayoutProps) => (
     </header>
 
     <main>{children}</main>
+
+    {nextTopic && (
+      <div className="border-t border-border bg-muted/30 py-10">
+        <div className="container mx-auto px-6 max-w-4xl flex justify-end">
+          <Link
+            to={nextTopic.to}
+            className="group flex items-center gap-3 bg-card border border-border rounded-xl px-6 py-4 hover:border-accent hover:shadow-lg transition-all duration-200"
+          >
+            <div className="text-right">
+              <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider mb-1">Next topic</p>
+              <p className="font-display font-semibold text-foreground group-hover:text-accent transition-colors">
+                {nextTopic.title}
+              </p>
+            </div>
+            <ArrowRight className="w-5 h-5 text-accent" />
+          </Link>
+        </div>
+      </div>
+    )}
 
     <footer className="border-t border-border py-8 text-center text-muted-foreground text-sm">
       <p>Double-Entry Bookkeeping — A learning resource for undergraduate accounting students</p>
