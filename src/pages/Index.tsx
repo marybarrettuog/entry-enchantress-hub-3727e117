@@ -17,12 +17,12 @@ const Index = () => (
     <HeroSection />
     <div id="concepts"><ConceptCards /></div>
     <div id="equation"><AccountingEquation /></div>
+    <div id="rules"><DebitCreditRules /></div>
     <div id="t-accounts"><TAccountVisual /></div>
     <div id="trial-balance"><TrialBalance /></div>
     <div id="financial-statements"><FinancialStatements /></div>
     <div id="cycle-order"><AccountingCycleOrder /></div>
     <div id="classification-quiz"><ClassificationQuiz /></div>
-    <div id="rules"><DebitCreditRules /></div>
     <div id="practice"><PracticeExamples /></div>
     <div id="quiz"><InteractiveQuiz /></div>
     <footer className="border-t border-border py-8 text-center text-muted-foreground text-sm">
