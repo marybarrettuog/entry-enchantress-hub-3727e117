@@ -8,6 +8,7 @@ const TestKnowledgePage = () => (
   <TopicLayout
     title="Test Your Knowledge"
     description="Classify accounts, work through real transactions, and challenge yourself with quiz questions."
+    prevTopic={{ to: "/flow-of-information", title: "Flow of Information" }}
   >
     <div className="space-y-0">
       <AccountingCycleOrder />
