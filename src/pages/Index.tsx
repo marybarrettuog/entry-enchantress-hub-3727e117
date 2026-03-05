@@ -12,7 +12,7 @@ const topics = [
   { to: "/rules", icon: CreditCard, title: "Debit & Credit Rules", desc: "When to debit, when to credit" },
   { to: "/t-accounts", icon: LayoutGrid, title: "T-Accounts", desc: "Visualise debits and credits" },
   { to: "/trial-balance", icon: ClipboardList, title: "Trial Balance", desc: "Check your books balance" },
-  { to: "/financial-statements", icon: FileText, title: "Financial Statements", desc: "Statement of profit or loss & balance sheet" },
+  { to: "/financial-statements", icon: FileText, title: "Financial Statements", desc: "Statement of profit or loss & statement of financial position" },
   { to: "/cycle-order", icon: RefreshCw, title: "Accounting Cycle", desc: "From transaction to statements" },
   { to: "/test-your-knowledge", icon: BrainCircuit, title: "Test Your Knowledge", desc: "Quizzes, practice examples & challenges" },
 ];
