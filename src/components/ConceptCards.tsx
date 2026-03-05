@@ -5,31 +5,43 @@ const concepts = [
     icon: BookOpen,
     title: "The Dual Aspect",
     description: "Every transaction affects at least two accounts. For every debit, there must be an equal and corresponding credit.",
+    linkTo: "rules",
+    linkLabel: "See Rules of Double Entry →",
   },
   {
     icon: Scale,
     title: "The Accounting Equation",
     description: "Assets = Liabilities + Equity. This equation must always balance after every transaction is recorded.",
+    linkTo: "equation",
+    linkLabel: "Explore the Golden Rule →",
   },
   {
     icon: ArrowLeftRight,
     title: "Debits & Credits",
     description: "Debits increase assets and expenses. Credits increase liabilities, equity, and revenue. They are simply left and right sides of an account.",
+    linkTo: "t-accounts",
+    linkLabel: "See T-Accounts in action →",
   },
   {
     icon: FileText,
     title: "The Trial Balance",
     description: "A listing of all account balances to verify that total debits equal total credits, ensuring the books are in balance.",
+    linkTo: "trial-balance",
+    linkLabel: "Build a Trial Balance →",
   },
   {
     icon: BarChart3,
     title: "Statement of Profit or Loss",
     description: "Summarises revenue earned and expenses incurred over a period to calculate the net profit or loss of the business.",
+    linkTo: "financial-statements",
+    linkLabel: "View Financial Statements →",
   },
   {
     icon: ClipboardList,
     title: "Statement of Financial Position",
     description: "A snapshot of what the business owns (assets), owes (liabilities), and the owner's residual interest (equity) at a point in time.",
+    linkTo: "financial-statements",
+    linkLabel: "View Financial Statements →",
   },
 ];
 
@@ -79,12 +91,18 @@ const ConceptCards = () => (
     </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       {concepts.map((c) => (
-        <div key={c.title} className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div key={c.title} className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
           <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
             <c.icon className="w-6 h-6 text-accent" />
           </div>
           <h3 className="text-lg font-display font-semibold text-foreground mb-2">{c.title}</h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">{c.description}</p>
+          <p className="text-muted-foreground text-sm leading-relaxed mb-3">{c.description}</p>
+          <a
+            href={`#${c.linkTo}`}
+            className="mt-auto text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
+          >
+            {c.linkLabel}
+          </a>
         </div>
       ))}
     </div>
