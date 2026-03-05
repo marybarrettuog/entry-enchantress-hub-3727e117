@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import IntroSection from "@/components/IntroSection";
 import {
   BookOpen, Scale, CreditCard, LayoutGrid, ClipboardList,
-  FileText, RefreshCw, HelpCircle, Dumbbell, BrainCircuit,
+  FileText, RefreshCw, BrainCircuit,
 } from "lucide-react";
 
 const topics = [
@@ -12,11 +12,9 @@ const topics = [
   { to: "/rules", icon: CreditCard, title: "Debit & Credit Rules", desc: "When to debit, when to credit" },
   { to: "/t-accounts", icon: LayoutGrid, title: "T-Accounts", desc: "Visualise debits and credits" },
   { to: "/trial-balance", icon: ClipboardList, title: "Trial Balance", desc: "Check your books balance" },
-  { to: "/financial-statements", icon: FileText, title: "Financial Statements", desc: "Income statement & balance sheet" },
+  { to: "/financial-statements", icon: FileText, title: "Financial Statements", desc: "Statement of profit or loss & balance sheet" },
   { to: "/cycle-order", icon: RefreshCw, title: "Accounting Cycle", desc: "From transaction to statements" },
-  { to: "/classification-quiz", icon: HelpCircle, title: "Classification Quiz", desc: "Classify accounts correctly" },
-  { to: "/practice", icon: Dumbbell, title: "Practice Examples", desc: "Work through real transactions" },
-  { to: "/quiz", icon: BrainCircuit, title: "Interactive Quiz", desc: "Test your knowledge" },
+  { to: "/test-your-knowledge", icon: BrainCircuit, title: "Test Your Knowledge", desc: "Quizzes, practice examples & challenges" },
 ];
 
 const Index = () => (

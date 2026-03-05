@@ -12,9 +12,7 @@ import TAccountsPage from "./pages/TAccountsPage";
 import TrialBalancePage from "./pages/TrialBalancePage";
 import FinancialStatementsPage from "./pages/FinancialStatementsPage";
 import CycleOrderPage from "./pages/CycleOrderPage";
-import ClassificationQuizPage from "./pages/ClassificationQuizPage";
-import PracticePage from "./pages/PracticePage";
-import QuizPage from "./pages/QuizPage";
+import TestKnowledgePage from "./pages/TestKnowledgePage";
 
 const queryClient = new QueryClient();
 
@@ -33,9 +31,7 @@ const App = () => (
           <Route path="/trial-balance" element={<TrialBalancePage />} />
           <Route path="/financial-statements" element={<FinancialStatementsPage />} />
           <Route path="/cycle-order" element={<CycleOrderPage />} />
-          <Route path="/classification-quiz" element={<ClassificationQuizPage />} />
-          <Route path="/practice" element={<PracticePage />} />
-          <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/test-your-knowledge" element={<TestKnowledgePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
