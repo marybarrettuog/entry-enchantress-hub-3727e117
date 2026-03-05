@@ -1,5 +1,6 @@
 import StickyNav from "@/components/StickyNav";
 import HeroSection from "@/components/HeroSection";
+import IntroSection from "@/components/IntroSection";
 import ConceptCards from "@/components/ConceptCards";
 import AccountingEquation from "@/components/AccountingEquation";
 import TAccountVisual from "@/components/TAccountVisual";
@@ -15,6 +16,7 @@ const Index = () => (
   <div className="min-h-screen bg-background scroll-smooth">
     <StickyNav />
     <HeroSection />
+    <div id="intro"><IntroSection /></div>
     <div id="concepts"><ConceptCards /></div>
     <div id="equation"><AccountingEquation /></div>
     <div id="rules"><DebitCreditRules /></div>
