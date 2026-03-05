@@ -50,7 +50,7 @@ const IntroSection = () => (
             The solution, developed by Italian merchants in the 15th century and formalised by the mathematician <strong className="text-foreground">Luca Pacioli</strong> in 1494, was a beautifully simple idea: record <em>every</em> transaction <strong className="text-foreground">twice</strong>.
           </p>
           <p>
-            This is <strong className="text-foreground">double-entry book-keeping</strong>. For every transaction, we make two entries — a <em>debit</em> in one account and a corresponding <em>credit</em> in another. If you buy office supplies for £200 in cash, you record the supplies coming <em>in</em> (debit) and the cash going <em>out</em> (credit). The two entries are always equal, which means the books must always balance — giving us a powerful, self-checking system.
+            This is <strong className="text-foreground">double-entry book-keeping</strong>. For every transaction, we make two entries — a <em>debit</em> in one account and a corresponding <em>credit</em> in another. If you buy office supplies for €200 in cash, you record the supplies coming <em>in</em> (debit) and the cash going <em>out</em> (credit). The two entries are always equal, which means the books must always balance — giving us a powerful, self-checking system.
           </p>
           <p className="text-foreground font-medium italic border-l-4 border-accent pl-4">
             This principle — that every debit has an equal and opposite credit — is the golden thread that runs through all of accounting. It's what you'll master in the sections that follow.
