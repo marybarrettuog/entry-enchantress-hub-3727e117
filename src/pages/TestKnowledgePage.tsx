@@ -7,6 +7,7 @@ const TestKnowledgePage = () => (
   <TopicLayout
     title="Test Your Knowledge"
     description="Classify accounts, work through real transactions, and challenge yourself with quiz questions."
+    nextTopic={{ to: "/", title: "Back to Home" }}
   >
     <div className="space-y-0">
       <section className="py-12 md:py-16">
