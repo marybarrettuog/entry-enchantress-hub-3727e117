@@ -4,7 +4,7 @@ const reasons = [
   { icon: Shield, title: "Keep Control", desc: "Know exactly what you own, what you owe, and where your money goes — preventing fraud, waste, and mismanagement." },
   { icon: Scale, title: "Manage Assets & Liabilities", desc: "Track what the business owns and owes so you can make informed decisions about spending, investing, and borrowing." },
   { icon: TrendingUp, title: "Keep Score", desc: "Measure profit or loss over time. Without records, you're flying blind — you can't improve what you can't measure." },
-  { icon: FileText, title: "Tax & Financial Reporting", desc: "HMRC and other tax authorities require accurate records. Businesses must file tax returns based on their financial data." },
+  { icon: FileText, title: "Tax & Financial Reporting", desc: "Revenue and other tax authorities require accurate records. Businesses must file tax returns based on their financial data." },
   { icon: BookOpen, title: "Company Law Compliance", desc: "The Companies Act requires limited companies to maintain adequate accounting records and file annual accounts." },
   { icon: Users, title: "Partnership & Stakeholder Agreements", desc: "Partners need reliable records to determine profit shares. Investors, lenders, and regulators all rely on accurate books." },
 ];
