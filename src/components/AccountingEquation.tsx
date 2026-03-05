@@ -134,10 +134,10 @@ const AccountingEquation = () => (
             </p>
             <p className="font-mono text-sm text-success font-semibold uppercase tracking-wider mb-2">Debit Side</p>
             <div className="space-y-1 text-sm text-muted-foreground">
-              <p><span className="font-bold text-foreground">D</span>rawings</p>
+              <p><span className="font-bold text-foreground">D</span>ebit</p>
               <p><span className="font-bold text-foreground">E</span>xpenses</p>
               <p><span className="font-bold text-foreground">A</span>ssets</p>
-              <p><span className="font-bold text-foreground">D</span>ebits increase these</p>
+              <p><span className="font-bold text-foreground">D</span>rawings</p>
             </div>
           </div>
           <div>
@@ -146,15 +146,15 @@ const AccountingEquation = () => (
             </p>
             <p className="font-mono text-sm text-info font-semibold uppercase tracking-wider mb-2">Credit Side</p>
             <div className="space-y-1 text-sm text-muted-foreground">
-              <p><span className="font-bold text-foreground">C</span>apital</p>
+              <p><span className="font-bold text-foreground">C</span>redit</p>
               <p><span className="font-bold text-foreground">L</span>iabilities</p>
               <p><span className="font-bold text-foreground">I</span>ncome</p>
-              <p><span className="font-bold text-foreground">C</span>redits increase these</p>
+              <p><span className="font-bold text-foreground">C</span>apital</p>
             </div>
           </div>
         </div>
         <p className="text-muted-foreground text-sm italic max-w-lg mx-auto">
-          Remember: <strong className="text-foreground">DEAD CLIC</strong> — if you know which side an account lives on, you know whether to debit or credit it when it increases.
+          Remember: <strong className="text-foreground">DEAD</strong> — <strong>D</strong>ebit <strong>E</strong>xpenses, <strong>A</strong>ssets &amp; <strong>D</strong>rawings. <strong className="text-foreground">CLIC</strong> — <strong>C</strong>redit <strong>L</strong>iabilities, <strong>I</strong>ncome &amp; <strong>C</strong>apital.
         </p>
       </div>
     </div>
