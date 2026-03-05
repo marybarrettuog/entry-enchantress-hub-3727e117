@@ -35,9 +35,21 @@ const TopicLayout = ({ children, title, description, nextTopic }: TopicLayoutPro
 
     <main>{children}</main>
 
-    {nextTopic && (
-      <div className="border-t border-border bg-muted/30 py-10">
-        <div className="container mx-auto px-6 max-w-4xl flex justify-end">
+    <div className="border-t border-border bg-muted/30 py-10">
+      <div className="container mx-auto px-6 max-w-4xl flex items-center justify-between">
+        <Link
+          to="/"
+          className="group flex items-center gap-3 bg-card border border-border rounded-xl px-6 py-4 hover:border-accent hover:shadow-lg transition-all duration-200"
+        >
+          <ArrowLeft className="w-5 h-5 text-accent" />
+          <div>
+            <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider mb-1">Home</p>
+            <p className="font-display font-semibold text-foreground group-hover:text-accent transition-colors">
+              All Topics
+            </p>
+          </div>
+        </Link>
+        {nextTopic && (
           <Link
             to={nextTopic.to}
             className="group flex items-center gap-3 bg-card border border-border rounded-xl px-6 py-4 hover:border-accent hover:shadow-lg transition-all duration-200"
@@ -50,9 +62,9 @@ const TopicLayout = ({ children, title, description, nextTopic }: TopicLayoutPro
             </div>
             <ArrowRight className="w-5 h-5 text-accent" />
           </Link>
-        </div>
+        )}
       </div>
-    )}
+    </div>
 
     <footer className="border-t border-border py-8 text-center text-muted-foreground text-sm">
       <p>Double-Entry Bookkeeping — A learning resource for undergraduate accounting students</p>
