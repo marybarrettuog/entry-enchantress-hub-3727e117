@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback } from "react";
 import { CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy } from "lucide-react";
 
 interface QuizQuestion {

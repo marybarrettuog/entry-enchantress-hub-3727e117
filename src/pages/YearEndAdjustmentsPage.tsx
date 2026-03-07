@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ChevronDown, Calendar, TrendingDown, AlertTriangle, Package, FileX, Shield, PenTool } from "lucide-react";
+import YearEndQuiz from "@/components/YearEndQuiz";
 
 const sections = [
   {
@@ -696,6 +697,17 @@ const YearEndAdjustmentsPage = () => {
             </div>
             <p className="text-muted-foreground text-sm italic text-center">Total Assets (€21,050) = Total Capital &amp; Liabilities (€21,050) — the statement balances.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Quiz Section */}
+      <section className="py-12 md:py-16 border-t border-border">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2">Test Your Knowledge</h2>
+            <p className="text-muted-foreground">Calculate the adjustments and select the correct journal entry for each scenario.</p>
+          </div>
+          <YearEndQuiz />
         </div>
       </section>
 
