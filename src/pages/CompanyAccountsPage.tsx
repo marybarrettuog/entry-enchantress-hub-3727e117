@@ -289,6 +289,25 @@ const sections = [
           <h4 className="font-display font-semibold text-foreground">What's Included in Key Headings?</h4>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Trade &amp; Other Receivables</h5>
+              <p className="text-muted-foreground text-sm">
+                Amounts owed to the company: trade receivables (credit customers), prepayments (expenses paid in advance), accrued income (revenue earned but not yet invoiced), and VAT recoverable. Shown net of any allowance for doubtful debts.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Trade &amp; Other Payables</h5>
+              <p className="text-muted-foreground text-sm">
+                Amounts the company owes: trade payables (credit suppliers), accruals (expenses incurred but not yet invoiced), deferred income (revenue received in advance), VAT payable, and other short-term obligations due within one year.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Inventories</h5>
+              <p className="text-muted-foreground text-sm">
+                Goods held for sale or use in production: raw materials, work in progress, and finished goods. Measured at the lower of cost and net realisable value (IAS 2). Cost may be determined using FIFO or weighted average methods.
+              </p>
+            </div>
+          </div>
+            <div className="bg-card border border-border rounded-lg p-4">
               <h5 className="font-semibold text-foreground mb-1 text-sm">Property, Plant &amp; Equipment</h5>
               <p className="text-muted-foreground text-sm">
                 Tangible non-current assets used in operations: land, buildings, machinery, vehicles, furniture and fixtures. Shown at cost (or revalued amount) less accumulated depreciation and any impairment losses.
