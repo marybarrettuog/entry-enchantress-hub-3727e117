@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, ChevronDown, Landmark, Coins, ArrowUpDown,
-  FileText, BarChart3, BookOpen, ArrowRight, Sparkles,
+  FileText, BarChart3, BookOpen, ArrowRight,
 } from "lucide-react";
 import StickyNav from "@/components/StickyNav";
 
