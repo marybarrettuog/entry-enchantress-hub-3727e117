@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, ChevronDown, Landmark, Coins, ArrowUpDown,
-  FileText, BarChart3, BookOpen, ArrowRight, Sparkles,
+  FileText, BarChart3, BookOpen, ArrowRight,
 } from "lucide-react";
 import StickyNav from "@/components/StickyNav";
 
@@ -14,7 +14,7 @@ const companyNavItems = [
   { id: "sofp", label: "SFP" },
   { id: "socie", label: "Equity" },
   { id: "worked-example", label: "Example" },
-  { id: "ifrs18", label: "IFRS 18" },
+  
 ];
 
 const sections = [
@@ -486,180 +486,6 @@ const sections = [
             </div>
           </div>
           <p className="text-muted-foreground text-sm italic text-center">Total Assets (€159,000) = Total Equity &amp; Liabilities (€159,000) — the statement balances.</p>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: "ifrs18",
-    icon: Sparkles,
-    title: "IFRS 18 — The Future of Presentation",
-    desc: "How financial statements will change when IFRS 18 replaces IAS 1",
-    content: (
-      <div className="p-6 md:p-8 space-y-10">
-
-        {/* Overview */}
-        <div className="bg-muted/40 rounded-lg p-5 border border-border">
-          <h4 className="font-display font-semibold text-foreground mb-2">What is IFRS 18?</h4>
-          <p className="text-muted-foreground leading-relaxed">
-            IFRS 18 <em>Presentation and Disclosure in Financial Statements</em> was issued by the IASB in April 2024 and will replace IAS 1
-            for annual periods beginning on or after 1 January 2027. The biggest change is to the <strong>Statement of Profit or Loss</strong>, which
-            must now classify all income and expenses into defined categories and present new mandatory subtotals.
-          </p>
-        </div>
-
-        {/* Key Changes */}
-        <div className="space-y-4">
-          <h4 className="font-display font-semibold text-foreground">Key Changes from IAS 1</h4>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-lg p-4">
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Five P&amp;L Categories</h5>
-              <p className="text-muted-foreground text-sm">
-                All income and expenses must be classified into: <strong>Operating</strong>, <strong>Investing</strong>, <strong>Financing</strong>, <strong>Income Taxes</strong>, or <strong>Discontinued Operations</strong>.
-              </p>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-4">
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Mandatory Subtotals</h5>
-              <p className="text-muted-foreground text-sm">
-                Three new required subtotals: <strong>Operating Profit</strong>, <strong>Profit Before Financing &amp; Income Taxes</strong>, and <strong>Profit</strong>. Gross profit is encouraged but not required.
-              </p>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-4">
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Investing Category</h5>
-              <p className="text-muted-foreground text-sm">
-                Income and expenses from associates, investment properties, trade investments (dividends, interest received, fair value gains/losses) are classified here — <em>between</em> operating and financing.
-              </p>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-4">
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Cash Flow Impact</h5>
-              <p className="text-muted-foreground text-sm">
-                The indirect method now starts from <strong>Operating Profit</strong> (not Profit Before Tax). Dividends paid and interest paid must be classified as <strong>financing</strong> activities.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* IFRS 18 P&L Template */}
-        <div className="space-y-4">
-          <h4 className="font-display font-semibold text-foreground text-lg">IFRS 18 Statement of Profit or Loss — Format</h4>
-          <div className="bg-card border border-border rounded-xl overflow-hidden">
-            <div className="bg-muted/60 border-b border-border p-3">
-              <p className="font-mono font-semibold text-foreground text-sm text-center">Statement of Profit or Loss for the year ended 31 December 20X1</p>
-              <p className="font-mono text-xs text-muted-foreground text-center mt-1">IFRS 18 Format</p>
-            </div>
-            <div className="p-4 md:p-6 font-mono text-sm space-y-1">
-              {/* Operating */}
-              <div className="pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Operating</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span className="font-semibold text-foreground">Revenue</span><span className="text-right">€X</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Cost of Sales</span><span className="text-right">(€X)</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 font-semibold text-accent"><span>Gross Profit</span><span className="text-right">€X</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4 pt-2"><span>Distribution Costs</span><span className="text-right">(€X)</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Administrative Expenses</span><span className="text-right">(€X)</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Other Operating Expenses</span><span className="text-right">(€X)</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Operating Profit ★</span><span className="text-right">€X</span></div>
-
-              {/* Investing */}
-              <div className="pt-4 pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Investing</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Share of Profit of Associates</span><span className="text-right">€X</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Investment Income (dividends/interest)</span><span className="text-right">€X</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Fair Value Gains/(Losses) on Investments</span><span className="text-right">€X</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Profit Before Financing &amp; Income Taxes ★</span><span className="text-right">€X</span></div>
-
-              {/* Financing */}
-              <div className="pt-4 pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Financing</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Interest Expense on Borrowings</span><span className="text-right">(€X)</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Interest on Lease Liabilities</span><span className="text-right">(€X)</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 font-semibold"><span>Profit Before Income Taxes</span><span className="text-right">€X</span></div>
-
-              {/* Income Taxes */}
-              <div className="pt-4 pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Income Taxes</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Income Tax Expense</span><span className="text-right">(€X)</span></div>
-              <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Profit ★</span><span className="text-right">€X</span></div>
-            </div>
-          </div>
-          <p className="text-muted-foreground text-sm italic text-center">★ = mandatory subtotal under IFRS 18. Both Operating Profit and Profit Before Financing &amp; Income Taxes must always be shown, even if they are the same amount.</p>
-        </div>
-
-        {/* Worked Example re-presented */}
-        <div className="space-y-4">
-          <h4 className="font-display font-semibold text-foreground text-lg flex items-center gap-2">
-            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold">→</span>
-            Worked Example Re-presented under IFRS 18
-          </h4>
-          <p className="text-muted-foreground text-sm">
-            Using the same trial balance from the IAS 1 worked example above, here is how the P&amp;L would be presented under IFRS 18.
-            Note how Finance Costs move into the Financing category and a new subtotal — Profit Before Financing &amp; Income Taxes — appears.
-          </p>
-          <div className="bg-card border border-border rounded-xl overflow-hidden">
-            <div className="bg-muted/60 border-b border-border p-3">
-              <p className="font-mono font-semibold text-foreground text-sm text-center">Statement of Profit or Loss for the year ended 31 December 20X1</p>
-              <p className="font-mono text-xs text-muted-foreground text-center mt-1">Re-presented under IFRS 18</p>
-            </div>
-            <div className="p-4 md:p-6 font-mono text-sm space-y-1">
-              {/* Operating */}
-              <div className="pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Operating</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span className="font-semibold text-foreground">Revenue</span><span></span><span className="text-right">180,000</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span>Cost of Sales</span><span></span><span className="text-right">(105,000)</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1 font-semibold text-accent"><span>Gross Profit</span><span></span><span className="text-right">75,000</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pt-2"><span>Distribution Costs</span><span className="text-right">(12,000)</span><span></span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span>Administrative Expenses</span><span className="text-right">(20,000)</span><span></span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1"><span></span><span></span><span className="text-right">(32,000)</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Operating Profit ★</span><span></span><span className="text-right">43,000</span></div>
-
-              {/* Investing */}
-              <div className="pt-4 pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Investing</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span className="text-muted-foreground italic">No investing income or expenses</span><span></span><span className="text-right">—</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Profit Before Financing &amp; Income Taxes ★</span><span></span><span className="text-right">43,000</span></div>
-
-              {/* Financing */}
-              <div className="pt-4 pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Financing</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span>Interest Expense on Borrowings</span><span></span><span className="text-right">(2,000)</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1 font-semibold"><span>Profit Before Income Taxes</span><span></span><span className="text-right">41,000</span></div>
-
-              {/* Income Taxes */}
-              <div className="pt-4 pb-1"><span className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">Income Taxes</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span>Income Tax Expense</span><span></span><span className="text-right">(8,000)</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Profit ★</span><span></span><span className="text-right">33,000</span></div>
-            </div>
-          </div>
-          <p className="text-muted-foreground text-sm italic text-center">
-            In this example, Operating Profit and Profit Before Financing &amp; Income Taxes are both €43,000 because there are no investing items.
-            Under IFRS 18, both subtotals must still be shown.
-          </p>
-        </div>
-
-        {/* Comparison */}
-        <div className="space-y-4">
-          <h4 className="font-display font-semibold text-foreground">IAS 1 vs IFRS 18 — Quick Comparison</h4>
-          <div className="bg-card border border-border rounded-xl overflow-hidden overflow-x-auto">
-            <table className="w-full text-sm min-w-[500px]">
-              <thead>
-                <tr className="bg-muted/60 border-b border-border">
-                  <th className="text-left p-3 font-semibold text-foreground">Feature</th>
-                  <th className="text-left p-3 font-semibold text-foreground">IAS 1 (Current)</th>
-                  <th className="text-left p-3 font-semibold text-foreground">IFRS 18 (From 2027)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr><td className="p-3 text-muted-foreground">P&amp;L categories</td><td className="p-3">No defined categories</td><td className="p-3 font-semibold text-foreground">5 mandatory categories</td></tr>
-                <tr><td className="p-3 text-muted-foreground">Operating Profit</td><td className="p-3">Not required (commonly shown)</td><td className="p-3 font-semibold text-foreground">Mandatory subtotal</td></tr>
-                <tr><td className="p-3 text-muted-foreground">Profit Before Financing &amp; Tax</td><td className="p-3">Not required</td><td className="p-3 font-semibold text-foreground">New mandatory subtotal</td></tr>
-                <tr><td className="p-3 text-muted-foreground">Investing income/expenses</td><td className="p-3">Mixed into operating or below</td><td className="p-3 font-semibold text-foreground">Separate category</td></tr>
-                <tr><td className="p-3 text-muted-foreground">Finance costs classification</td><td className="p-3">Shown below operating profit</td><td className="p-3 font-semibold text-foreground">Financing category</td></tr>
-                <tr><td className="p-3 text-muted-foreground">SFP &amp; SOCIE</td><td className="p-3">As currently presented</td><td className="p-3">Minimal changes</td></tr>
-                <tr><td className="p-3 text-muted-foreground">Cash flow (indirect method)</td><td className="p-3">Starts with Profit Before Tax</td><td className="p-3 font-semibold text-foreground">Starts with Operating Profit</td></tr>
-                <tr><td className="p-3 text-muted-foreground">Interest &amp; dividends paid</td><td className="p-3">Operating or financing (choice)</td><td className="p-3 font-semibold text-foreground">Must be financing</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div className="bg-accent/10 border border-accent/30 rounded-lg p-5">
-          <p className="text-foreground text-sm">
-            <strong>Note:</strong> The Statement of Financial Position and Statement of Changes in Equity are largely unaffected by IFRS 18.
-            The main impact is on the <strong>Statement of Profit or Loss</strong> (structured into categories with mandatory subtotals) and the
-            <strong> Statement of Cash Flows</strong> (indirect method starts from Operating Profit; interest and dividends paid classified as financing).
-          </p>
         </div>
       </div>
     ),
