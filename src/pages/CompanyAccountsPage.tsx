@@ -202,14 +202,12 @@ const sections = [
             <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 font-semibold text-accent"><span>Gross Profit</span><span className="text-right">€X</span></div>
             <div className="grid grid-cols-[1fr_auto] gap-x-4 pt-2"><span>Distribution Costs</span><span className="text-right">(€X)</span></div>
             <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Administrative Expenses</span><span className="text-right">(€X)</span></div>
-            <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 font-semibold"><span>Operating Profit</span><span className="text-right">€X</span></div>
             <div className="grid grid-cols-[1fr_auto] gap-x-4 pt-2"><span>Finance Costs</span><span className="text-right">(€X)</span></div>
             <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 font-semibold"><span>Profit Before Tax</span><span className="text-right">€X</span></div>
             <div className="grid grid-cols-[1fr_auto] gap-x-4"><span>Income Tax Expense</span><span className="text-right">(€X)</span></div>
             <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Profit for the Year</span><span className="text-right">€X</span></div>
           </div>
         </div>
-        <p className="text-muted-foreground text-sm italic text-center">Note: 'Operating Profit' is not a required line under IAS 1, but it is commonly presented and expected in practice.</p>
       </div>
     ),
   },
@@ -371,7 +369,6 @@ const sections = [
               <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pt-2"><span>Distribution Costs</span><span className="text-right">(12,000)</span><span></span></div>
               <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span>Administrative Expenses</span><span className="text-right">(20,000)</span><span></span></div>
               <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1"><span></span><span></span><span className="text-right">(32,000)</span></div>
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1 font-semibold"><span>Operating Profit</span><span></span><span className="text-right">43,000</span></div>
               <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pt-2"><span>Finance Costs</span><span></span><span className="text-right">(2,000)</span></div>
               <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1 font-semibold"><span>Profit Before Tax</span><span></span><span className="text-right">41,000</span></div>
               <div className="grid grid-cols-[1fr_auto_auto] gap-x-4"><span>Income Tax Expense</span><span></span><span className="text-right">(8,000)</span></div>
