@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
+const defaultNavItems = [
   { id: "concepts", label: "Concepts" },
   { id: "equation", label: "Equation" },
   { id: "rules", label: "Rules" },
@@ -12,11 +12,19 @@ const navItems = [
   { id: "test-your-knowledge", label: "Test" },
 ];
 
-interface StickyNavProps {
-  onNavigate?: (id: string) => void;
+interface NavItem {
+  id: string;
+  label: string;
 }
 
-const StickyNav = ({ onNavigate }: StickyNavProps) => {
+interface StickyNavProps {
+  onNavigate?: (id: string) => void;
+  items?: NavItem[];
+  title?: string;
+}
+
+const StickyNav = ({ onNavigate, items, title = "Double-Entry" }: StickyNavProps) => {
+  const navItems = items || defaultNavItems;
   const [scrolled, setScrolled] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -71,7 +79,7 @@ const StickyNav = ({ onNavigate }: StickyNavProps) => {
             scrolled ? "opacity-100 text-foreground" : "opacity-0 pointer-events-none"
           }`}
         >
-          Double-Entry
+          {title}
         </button>
 
         {/* Desktop nav */}
