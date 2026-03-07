@@ -284,6 +284,30 @@ const sections = [
             <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 mt-2 font-semibold text-accent"><span>Total Equity &amp; Liabilities</span><span className="text-right">€X</span></div>
           </div>
         </div>
+
+        <div className="space-y-4">
+          <h4 className="font-display font-semibold text-foreground">What's Included in Key Headings?</h4>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Property, Plant &amp; Equipment</h5>
+              <p className="text-muted-foreground text-sm">
+                Tangible non-current assets used in operations: land, buildings, machinery, vehicles, furniture and fixtures. Shown at cost (or revalued amount) less accumulated depreciation and any impairment losses.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Intangible Assets</h5>
+              <p className="text-muted-foreground text-sm">
+                Non-physical assets with future economic benefit: goodwill (arising on business combinations), patents, trademarks, licences, and capitalised development costs. Shown at cost less accumulated amortisation and impairment.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Cash &amp; Cash Equivalents</h5>
+              <p className="text-muted-foreground text-sm">
+                Cash in hand, bank current account balances, and short-term highly liquid investments readily convertible to known amounts of cash (typically maturing within three months), such as money market deposits or treasury bills.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     ),
   },
