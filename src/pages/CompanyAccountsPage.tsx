@@ -147,7 +147,7 @@ const sections = [
         <div className="bg-muted/40 rounded-lg p-5 border border-border">
           <h4 className="font-display font-semibold text-foreground mb-2">What is a Share Buyback?</h4>
           <p className="text-muted-foreground leading-relaxed">
-            A company may repurchase its own shares from shareholders. This reduces the equity of the company. Shares bought back may be <strong>cancelled</strong> (reducing share capital) or held as <strong>treasury shares</strong>.
+            A company may repurchase its own shares from shareholders. This reduces the equity of the company. The shares bought back are then <strong>cancelled</strong>, reducing share capital.
           </p>
         </div>
 
@@ -176,18 +176,6 @@ const sections = [
           </div>
         </div>
 
-        <div className="space-y-4">
-          <h4 className="font-display font-semibold text-foreground">Treasury Shares</h4>
-          <div className="bg-card border border-border rounded-lg p-4">
-            <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
-            <p className="text-muted-foreground text-sm mb-3">If shares are repurchased but not cancelled, they are held as treasury shares — a deduction from equity.</p>
-            <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Treasury Shares (Equity)</span><span className="text-right">€9,000</span>
-              <span>Cr Bank</span><span className="text-right">€9,000</span>
-            </div>
-            <p className="text-muted-foreground text-xs mt-2 italic">Treasury shares are presented as a deduction from total equity on the Statement of Financial Position.</p>
-          </div>
-        </div>
       </div>
     ),
   },
