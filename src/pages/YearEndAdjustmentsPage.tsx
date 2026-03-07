@@ -375,6 +375,186 @@ const YearEndAdjustmentsPage = () => {
         </div>
       </section>
 
+      {/* Worked Example */}
+      <section className="py-12 md:py-16 bg-muted/30 border-t border-border">
+        <div className="container mx-auto px-6 max-w-5xl space-y-10">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2">Worked Example</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Starting from a trial balance, we record year-end adjustments and produce a revised trial balance.</p>
+          </div>
+
+          {/* Step 1 — Initial Trial Balance */}
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-foreground text-lg flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold">1</span>
+              Trial Balance — Before Adjustments
+            </h3>
+            <div className="bg-card border border-border rounded-xl overflow-hidden">
+              <table className="w-full text-sm font-mono">
+                <thead>
+                  <tr className="bg-muted/60 border-b border-border">
+                    <th className="text-left p-3 font-semibold text-foreground">Account</th>
+                    <th className="text-right p-3 font-semibold text-foreground">Dr €</th>
+                    <th className="text-right p-3 font-semibold text-foreground">Cr €</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr><td className="p-3">Sales</td><td className="text-right p-3"></td><td className="text-right p-3">52,000</td></tr>
+                  <tr><td className="p-3">Purchases</td><td className="text-right p-3">28,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Opening Inventory</td><td className="text-right p-3">3,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Trade Receivables</td><td className="text-right p-3">8,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Trade Payables</td><td className="text-right p-3"></td><td className="text-right p-3">5,200</td></tr>
+                  <tr><td className="p-3">Bank</td><td className="text-right p-3">2,500</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Equipment</td><td className="text-right p-3">10,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Accumulated Depreciation</td><td className="text-right p-3"></td><td className="text-right p-3">2,000</td></tr>
+                  <tr><td className="p-3">Allowance for Doubtful Debts</td><td className="text-right p-3"></td><td className="text-right p-3">500</td></tr>
+                  <tr><td className="p-3">Rent Expense</td><td className="text-right p-3">4,800</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Insurance Expense</td><td className="text-right p-3">2,400</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Wages Expense</td><td className="text-right p-3">12,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Drawings</td><td className="text-right p-3">6,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Capital</td><td className="text-right p-3"></td><td className="text-right p-3">15,000</td></tr>
+                  <tr><td className="p-3">Loan</td><td className="text-right p-3"></td><td className="text-right p-3">2,000</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr className="bg-muted/60 border-t-2 border-accent font-semibold text-accent">
+                    <td className="p-3">Total</td>
+                    <td className="text-right p-3">76,700</td>
+                    <td className="text-right p-3">76,700</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          {/* Step 2 — Additional Information */}
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-foreground text-lg flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold">2</span>
+              Additional Information at Year End
+            </h3>
+            <div className="bg-card border border-border rounded-xl p-5 md:p-6">
+              <ol className="list-decimal list-inside text-muted-foreground space-y-2.5 text-sm leading-relaxed">
+                <li>Closing inventory has been valued at <strong className="text-foreground">€4,200</strong>.</li>
+                <li>Equipment is depreciated using the straight-line method at <strong className="text-foreground">10% on cost</strong>. (10% × €10,000 = €1,000)</li>
+                <li>Insurance includes <strong className="text-foreground">€600</strong> prepaid relating to next year.</li>
+                <li>Wages of <strong className="text-foreground">€800</strong> are accrued (owing at year end).</li>
+                <li>A debt of <strong className="text-foreground">€500</strong> is to be written off as irrecoverable.</li>
+                <li>The allowance for doubtful debts is to be adjusted to <strong className="text-foreground">10%</strong> of the remaining trade receivables.</li>
+              </ol>
+            </div>
+          </div>
+
+          {/* Step 3 — Journal Entries */}
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-foreground text-lg flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold">3</span>
+              Journal Entries to Record Adjustments
+            </h3>
+            <div className="space-y-4">
+              {/* Adj 1 */}
+              <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <p className="text-sm font-semibold text-foreground mb-1">1. Closing Inventory — €4,200</p>
+                <div className="grid grid-cols-2 gap-1.5 font-mono text-sm mt-2">
+                  <span>Dr Inventory Asset</span><span className="text-right">€4,200</span>
+                  <span>Cr Inventory Cost of Goods Sold</span><span className="text-right">€4,200</span>
+                </div>
+              </div>
+              {/* Adj 2 */}
+              <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <p className="text-sm font-semibold text-foreground mb-1">2. Depreciation — €1,000</p>
+                <div className="grid grid-cols-2 gap-1.5 font-mono text-sm mt-2">
+                  <span>Dr Depreciation Expense</span><span className="text-right">€1,000</span>
+                  <span>Cr Accumulated Depreciation</span><span className="text-right">€1,000</span>
+                </div>
+              </div>
+              {/* Adj 3 */}
+              <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <p className="text-sm font-semibold text-foreground mb-1">3. Insurance Prepaid — €600</p>
+                <div className="grid grid-cols-2 gap-1.5 font-mono text-sm mt-2">
+                  <span>Dr Prepaid Expenses</span><span className="text-right">€600</span>
+                  <span>Cr Insurance Expense</span><span className="text-right">€600</span>
+                </div>
+              </div>
+              {/* Adj 4 */}
+              <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <p className="text-sm font-semibold text-foreground mb-1">4. Wages Accrued — €800</p>
+                <div className="grid grid-cols-2 gap-1.5 font-mono text-sm mt-2">
+                  <span>Dr Wages Expense</span><span className="text-right">€800</span>
+                  <span>Cr Accrued Expenses</span><span className="text-right">€800</span>
+                </div>
+              </div>
+              {/* Adj 5 */}
+              <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <p className="text-sm font-semibold text-foreground mb-1">5. Irrecoverable Debt Write-Off — €500</p>
+                <div className="grid grid-cols-2 gap-1.5 font-mono text-sm mt-2">
+                  <span>Dr Irrecoverable Debts Expense</span><span className="text-right">€500</span>
+                  <span>Cr Trade Receivables</span><span className="text-right">€500</span>
+                </div>
+              </div>
+              {/* Adj 6 */}
+              <div className="bg-card border border-border rounded-xl p-4 md:p-5">
+                <p className="text-sm font-semibold text-foreground mb-1">6. Allowance for Doubtful Debts — Increase of €250</p>
+                <p className="text-muted-foreground text-xs mb-2">Remaining receivables: €8,000 − €500 = €7,500. Required allowance: 10% × €7,500 = €750. Current allowance: €500. Increase needed: €250.</p>
+                <div className="grid grid-cols-2 gap-1.5 font-mono text-sm mt-2">
+                  <span>Dr Doubtful Debt Expense</span><span className="text-right">€250</span>
+                  <span>Cr Allowance for Doubtful Debts</span><span className="text-right">€250</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 4 — Revised Trial Balance */}
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-foreground text-lg flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold">4</span>
+              Revised Trial Balance — After Adjustments
+            </h3>
+            <div className="bg-card border border-border rounded-xl overflow-hidden">
+              <table className="w-full text-sm font-mono">
+                <thead>
+                  <tr className="bg-muted/60 border-b border-border">
+                    <th className="text-left p-3 font-semibold text-foreground">Account</th>
+                    <th className="text-right p-3 font-semibold text-foreground">Dr €</th>
+                    <th className="text-right p-3 font-semibold text-foreground">Cr €</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr><td className="p-3">Sales</td><td className="text-right p-3"></td><td className="text-right p-3">52,000</td></tr>
+                  <tr><td className="p-3">Purchases</td><td className="text-right p-3">28,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Opening Inventory</td><td className="text-right p-3">3,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Inventory Asset</td><td className="text-right p-3">4,200</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Inventory Cost of Goods Sold</td><td className="text-right p-3"></td><td className="text-right p-3">4,200</td></tr>
+                  <tr><td className="p-3">Trade Receivables</td><td className="text-right p-3">7,500</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Trade Payables</td><td className="text-right p-3"></td><td className="text-right p-3">5,200</td></tr>
+                  <tr><td className="p-3">Bank</td><td className="text-right p-3">2,500</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Equipment</td><td className="text-right p-3">10,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Accumulated Depreciation</td><td className="text-right p-3"></td><td className="text-right p-3">3,000</td></tr>
+                  <tr><td className="p-3">Allowance for Doubtful Debts</td><td className="text-right p-3"></td><td className="text-right p-3">750</td></tr>
+                  <tr><td className="p-3">Rent Expense</td><td className="text-right p-3">4,800</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Insurance Expense</td><td className="text-right p-3">1,800</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Wages Expense</td><td className="text-right p-3">12,800</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Depreciation Expense</td><td className="text-right p-3">1,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Irrecoverable Debts Expense</td><td className="text-right p-3">500</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Doubtful Debt Expense</td><td className="text-right p-3">250</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Prepaid Expenses</td><td className="text-right p-3">600</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Accrued Expenses</td><td className="text-right p-3"></td><td className="text-right p-3">800</td></tr>
+                  <tr><td className="p-3">Drawings</td><td className="text-right p-3">6,000</td><td className="text-right p-3"></td></tr>
+                  <tr><td className="p-3">Capital</td><td className="text-right p-3"></td><td className="text-right p-3">15,000</td></tr>
+                  <tr><td className="p-3">Loan</td><td className="text-right p-3"></td><td className="text-right p-3">2,000</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr className="bg-muted/60 border-t-2 border-accent font-semibold text-accent">
+                    <td className="p-3">Total</td>
+                    <td className="text-right p-3">82,950</td>
+                    <td className="text-right p-3">82,950</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <p className="text-muted-foreground text-sm italic text-center">The revised trial balance still balances — confirming that all adjustment entries have been recorded correctly with equal debits and credits.</p>
+          </div>
+        </div>
+
       {/* Footer nav */}
       <div className="border-t border-border py-8">
         <div className="container mx-auto px-6 max-w-5xl flex justify-center">
