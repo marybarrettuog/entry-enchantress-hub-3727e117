@@ -14,6 +14,7 @@ const companyNavItems = [
   { id: "sofp", label: "SFP" },
   { id: "socie", label: "Equity" },
   { id: "worked-example", label: "Example" },
+  { id: "ifrs18", label: "IFRS 18" },
 ];
 
 const sections = [
