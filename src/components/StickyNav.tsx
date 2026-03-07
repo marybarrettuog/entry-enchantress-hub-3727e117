@@ -4,16 +4,19 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { id: "concepts", label: "Concepts" },
   { id: "equation", label: "Equation" },
+  { id: "rules", label: "Rules" },
   { id: "t-accounts", label: "T-Accounts" },
   { id: "trial-balance", label: "Trial Balance" },
   { id: "financial-statements", label: "Statements" },
-  { id: "classification-quiz", label: "Classify" },
-  { id: "rules", label: "Rules" },
-  { id: "practice", label: "Practice" },
-  { id: "quiz", label: "Quiz" },
+  { id: "flow-of-information", label: "Flow" },
+  { id: "test-your-knowledge", label: "Test" },
 ];
 
-const StickyNav = () => {
+interface StickyNavProps {
+  onNavigate?: (id: string) => void;
+}
+
+const StickyNav = ({ onNavigate }: StickyNavProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -44,11 +47,13 @@ const StickyNav = () => {
   }, []);
 
   const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMobileOpen(false);
+    if (onNavigate) {
+      onNavigate(id);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+    setMobileOpen(false);
   };
 
   return (
