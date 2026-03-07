@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ChevronDown, Calendar, TrendingDown, AlertTriangle, Package, Shield, PenTool, BookOpen, Brain } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown, Calendar, TrendingDown, AlertTriangle, Package, Shield, PenTool, BookOpen, Brain } from "lucide-react";
 import YearEndQuiz from "@/components/YearEndQuiz";
 import StickyNav from "@/components/StickyNav";
 
