@@ -642,7 +642,7 @@ const CompanyAccountsPage = () => {
       </section>
 
       <div className="border-t border-border py-8">
-        <div className="container mx-auto px-6 max-w-5xl flex justify-between">
+        <div className="container mx-auto px-6 max-w-5xl flex justify-between items-center">
           <Link
             to="/year-end-adjustments"
             className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-colors"
@@ -650,6 +650,13 @@ const CompanyAccountsPage = () => {
             <ArrowLeft className="w-4 h-4" />
             Year-End Adjustments
           </Link>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-colors"
+          >
+            <ArrowUp className="w-4 h-4" />
+            Back to top
+          </button>
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-semibold transition-colors"
