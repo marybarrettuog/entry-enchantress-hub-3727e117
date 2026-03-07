@@ -7,27 +7,44 @@ const sections = [
     id: "accruals",
     icon: Calendar,
     title: "Accruals",
-    desc: "Recognising expenses incurred but not yet paid",
+    desc: "Recognising expenses and income in the correct period",
     content: (
-      <div className="p-6 md:p-8 space-y-6">
+      <div className="p-6 md:p-8 space-y-8">
         <div className="bg-muted/40 rounded-lg p-5 border border-border">
           <h4 className="font-display font-semibold text-foreground mb-2">What are Accruals?</h4>
           <p className="text-muted-foreground leading-relaxed">
-            An accrual is an expense that has been incurred during the accounting period but has <strong>not yet been paid</strong> for. Under the accruals concept (matching principle), expenses must be recognised in the period they relate to — not when cash is paid.
+            Under the accruals concept (matching principle), income and expenses must be recognised in the period they <strong>relate to</strong> — not when cash is received or paid. At year end, adjustments are made for amounts that have been earned or incurred but not yet recorded.
           </p>
         </div>
+
+        {/* Accrued Expenses */}
         <div className="space-y-3">
-          <h4 className="font-display font-semibold text-foreground">Example</h4>
-          <p className="text-muted-foreground">A business has a year end of 31 December. The electricity bill for October–December (£600) arrives in January and is paid in February.</p>
+          <h4 className="font-display font-semibold text-foreground">Accrued Expenses</h4>
+          <p className="text-muted-foreground">An expense that has been <strong>incurred</strong> during the period but <strong>not yet paid</strong>. It is recorded as a current liability.</p>
           <div className="bg-card border border-border rounded-lg p-4">
-            <p className="font-mono text-sm mb-2"><span className="text-accent font-semibold">Year-end adjustment:</span></p>
+            <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
+            <p className="text-muted-foreground text-sm mb-3">Year end is 31 December. The electricity bill for October–December (€600) arrives in January.</p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Electricity Expense</span><span className="text-right">£600</span>
-              <span>Cr Accruals (Current Liability)</span><span className="text-right">£600</span>
+              <span>Dr Electricity Expense</span><span className="text-right">€600</span>
+              <span>Cr Accrued Expenses (Current Liability)</span><span className="text-right">€600</span>
             </div>
           </div>
-          <p className="text-muted-foreground text-sm italic">This ensures the expense appears in the correct period's Statement of Profit or Loss, and the liability is shown on the Statement of Financial Position.</p>
         </div>
+
+        {/* Accrued Income */}
+        <div className="space-y-3">
+          <h4 className="font-display font-semibold text-foreground">Accrued Income</h4>
+          <p className="text-muted-foreground">Income that has been <strong>earned</strong> during the period but <strong>not yet received</strong>. It is recorded as a current asset.</p>
+          <div className="bg-card border border-border rounded-lg p-4">
+            <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
+            <p className="text-muted-foreground text-sm mb-3">A business sub-lets part of its office. Rent of €400 for December has been earned but won't be received until January.</p>
+            <div className="grid grid-cols-2 gap-2 font-mono text-sm">
+              <span>Dr Accrued Income (Current Asset)</span><span className="text-right">€400</span>
+              <span>Cr Rental Income</span><span className="text-right">€400</span>
+            </div>
+          </div>
+        </div>
+        <p className="text-muted-foreground text-sm italic">These adjustments ensure the Statement of Profit or Loss reflects all income earned and expenses incurred in the period, regardless of cash timing.</p>
       </div>
     ),
   },
@@ -35,27 +52,46 @@ const sections = [
     id: "prepayments",
     icon: Calendar,
     title: "Prepayments",
-    desc: "Expenses paid in advance of the period they relate to",
+    desc: "Amounts paid or received in advance of the period they relate to",
     content: (
-      <div className="p-6 md:p-8 space-y-6">
+      <div className="p-6 md:p-8 space-y-8">
         <div className="bg-muted/40 rounded-lg p-5 border border-border">
           <h4 className="font-display font-semibold text-foreground mb-2">What are Prepayments?</h4>
           <p className="text-muted-foreground leading-relaxed">
-            A prepayment is an amount paid <strong>in advance</strong> for a service or expense that relates to a future accounting period. The portion relating to the next period is removed from expenses and shown as a current asset.
+            A prepayment arises when cash is paid or received <strong>in advance</strong> for a service that spans more than one accounting period. The portion relating to a future period must be adjusted at year end.
           </p>
         </div>
+
+        {/* Prepaid Expenses */}
         <div className="space-y-3">
-          <h4 className="font-display font-semibold text-foreground">Example</h4>
-          <p className="text-muted-foreground">On 1 October, a business pays £1,200 for 12 months of insurance. Year end is 31 December — only 3 months (£300) relates to this year. The remaining £900 is a prepayment.</p>
+          <h4 className="font-display font-semibold text-foreground">Prepaid Expenses</h4>
+          <p className="text-muted-foreground">An expense paid <strong>in advance</strong> — the portion relating to the next period is removed from expenses and shown as a current asset.</p>
           <div className="bg-card border border-border rounded-lg p-4">
-            <p className="font-mono text-sm mb-2"><span className="text-accent font-semibold">Year-end adjustment:</span></p>
+            <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
+            <p className="text-muted-foreground text-sm mb-3">On 1 October, a business pays €1,200 for 12 months of insurance. Year end is 31 December — only 3 months (€300) relates to this year. The remaining €900 is prepaid.</p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Prepayments (Current Asset)</span><span className="text-right">£900</span>
-              <span>Cr Insurance Expense</span><span className="text-right">£900</span>
+              <span>Dr Prepaid Expenses (Current Asset)</span><span className="text-right">€900</span>
+              <span>Cr Insurance Expense</span><span className="text-right">€900</span>
             </div>
+            <p className="text-muted-foreground text-xs mt-2 italic">This reduces the expense to €300 (the correct amount for the period).</p>
           </div>
-          <p className="text-muted-foreground text-sm italic">This reduces the expense to £300 (the correct amount for the period) and creates an asset for the future benefit.</p>
         </div>
+
+        {/* Prepaid Income (Income in Advance) */}
+        <div className="space-y-3">
+          <h4 className="font-display font-semibold text-foreground">Prepaid Income (Income in Advance)</h4>
+          <p className="text-muted-foreground">Income received <strong>in advance</strong> — the portion relating to the next period is removed from income and shown as a current liability.</p>
+          <div className="bg-card border border-border rounded-lg p-4">
+            <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
+            <p className="text-muted-foreground text-sm mb-3">On 1 November, a business receives €1,500 for 3 months of consultancy services. Year end is 31 December — only 2 months (€1,000) relates to this year. The remaining €500 is income in advance.</p>
+            <div className="grid grid-cols-2 gap-2 font-mono text-sm">
+              <span>Dr Consultancy Income</span><span className="text-right">€500</span>
+              <span>Cr Income in Advance (Current Liability)</span><span className="text-right">€500</span>
+            </div>
+            <p className="text-muted-foreground text-xs mt-2 italic">This reduces the income to €1,000 (the correct amount earned in this period).</p>
+          </div>
+        </div>
+        <p className="text-muted-foreground text-sm italic">Prepaid expenses are current assets; prepaid income (income in advance) is a current liability.</p>
       </div>
     ),
   },
@@ -79,20 +115,20 @@ const sections = [
               <h5 className="font-semibold text-foreground mb-2">Straight-Line Method</h5>
               <p className="text-muted-foreground text-sm mb-2">Equal charge each year.</p>
               <p className="font-mono text-sm text-accent">(Cost − Residual Value) ÷ Useful Life</p>
-              <p className="text-muted-foreground text-sm mt-2">E.g. Machine costs £10,000, residual value £2,000, useful life 4 years → £2,000 per year.</p>
+              <p className="text-muted-foreground text-sm mt-2">E.g. Machine costs €10,000, residual value €2,000, useful life 4 years → €2,000 per year.</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-4">
               <h5 className="font-semibold text-foreground mb-2">Reducing Balance Method</h5>
               <p className="text-muted-foreground text-sm mb-2">Higher charge in earlier years.</p>
               <p className="font-mono text-sm text-accent">Carrying Amount × %</p>
-              <p className="text-muted-foreground text-sm mt-2">E.g. £10,000 at 25%: Year 1 = £2,500, Year 2 = £1,875, etc.</p>
+              <p className="text-muted-foreground text-sm mt-2">E.g. €10,000 at 25%: Year 1 = €2,500, Year 2 = €1,875, etc.</p>
             </div>
           </div>
           <div className="bg-card border border-border rounded-lg p-4">
             <p className="font-mono text-sm mb-2"><span className="text-accent font-semibold">Double entry:</span></p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Depreciation Expense (P&L)</span><span className="text-right">£X</span>
-              <span>Cr Accumulated Depreciation (SFP)</span><span className="text-right">£X</span>
+              <span>Dr Depreciation Expense (P&L)</span><span className="text-right">€X</span>
+              <span>Cr Accumulated Depreciation (SFP)</span><span className="text-right">€X</span>
             </div>
           </div>
         </div>
@@ -116,8 +152,8 @@ const sections = [
           <h4 className="font-display font-semibold text-foreground">Double Entry</h4>
           <div className="bg-card border border-border rounded-lg p-4">
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Irrecoverable Debts Expense</span><span className="text-right">£X</span>
-              <span>Cr Trade Receivables</span><span className="text-right">£X</span>
+              <span>Dr Irrecoverable Debts Expense</span><span className="text-right">€X</span>
+              <span>Cr Trade Receivables</span><span className="text-right">€X</span>
             </div>
           </div>
           <p className="text-muted-foreground text-sm italic">The expense goes to the Statement of Profit or Loss. Trade receivables on the Statement of Financial Position are reduced accordingly.</p>
@@ -129,28 +165,32 @@ const sections = [
     id: "allowance-doubtful",
     icon: Shield,
     title: "Allowance for Doubtful Debts",
-    desc: "Providing for debts that may not be collected",
+    desc: "Estimating debts that may not be collected",
     content: (
       <div className="p-6 md:p-8 space-y-6">
         <div className="bg-muted/40 rounded-lg p-5 border border-border">
           <h4 className="font-display font-semibold text-foreground mb-2">What is an Allowance for Doubtful Debts?</h4>
           <p className="text-muted-foreground leading-relaxed">
-            Unlike irrecoverable debts (which are certain), doubtful debts are amounts that <strong>might</strong> not be collected. A provision (allowance) is created to reflect this uncertainty, applying the concept of prudence.
+            Unlike irrecoverable debts (which are certain), doubtful debts are amounts that <strong>might</strong> not be collected. An allowance is created to reflect this uncertainty, applying the concept of prudence.
           </p>
         </div>
         <div className="space-y-4">
           <h4 className="font-display font-semibold text-foreground">Creating or Increasing the Allowance</h4>
           <div className="bg-card border border-border rounded-lg p-4">
+            <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
+            <p className="text-muted-foreground text-sm mb-3">Trade receivables are €20,000. The business estimates 5% may be doubtful — the required allowance is €1,000. The existing allowance is €600, so an increase of €400 is needed.</p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Allowance for Doubtful Debts Expense</span><span className="text-right">£X</span>
-              <span>Cr Allowance for Doubtful Debts</span><span className="text-right">£X</span>
+              <span>Dr Allowance for Doubtful Debts Adjustment</span><span className="text-right">€400</span>
+              <span>Cr Allowance for Doubtful Debts</span><span className="text-right">€400</span>
             </div>
           </div>
           <h4 className="font-display font-semibold text-foreground">Decreasing the Allowance</h4>
           <div className="bg-card border border-border rounded-lg p-4">
+            <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
+            <p className="text-muted-foreground text-sm mb-3">The required allowance has fallen from €1,000 to €700 — a decrease of €300.</p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Allowance for Doubtful Debts</span><span className="text-right">£X</span>
-              <span>Cr Allowance for Doubtful Debts Expense</span><span className="text-right">£X</span>
+              <span>Dr Allowance for Doubtful Debts</span><span className="text-right">€300</span>
+              <span>Cr Allowance for Doubtful Debts Adjustment</span><span className="text-right">€300</span>
             </div>
           </div>
           <p className="text-muted-foreground text-sm italic">Only the <strong>change</strong> in allowance goes to the Statement of Profit or Loss. Trade receivables on the Statement of Financial Position are shown net of the allowance.</p>
@@ -174,16 +214,16 @@ const sections = [
         <div className="space-y-3">
           <h4 className="font-display font-semibold text-foreground">Cost of Sales Calculation</h4>
           <div className="bg-card border border-border rounded-lg p-4 font-mono text-sm space-y-1">
-            <div className="grid grid-cols-2"><span>Opening Inventory</span><span className="text-right">£X</span></div>
-            <div className="grid grid-cols-2"><span>+ Purchases</span><span className="text-right">£X</span></div>
-            <div className="grid grid-cols-2 border-t border-border pt-1"><span>− Closing Inventory</span><span className="text-right">(£X)</span></div>
-            <div className="grid grid-cols-2 border-t border-border pt-1 font-semibold text-accent"><span>= Cost of Sales</span><span className="text-right">£X</span></div>
+            <div className="grid grid-cols-2"><span>Opening Inventory</span><span className="text-right">€X</span></div>
+            <div className="grid grid-cols-2"><span>+ Purchases</span><span className="text-right">€X</span></div>
+            <div className="grid grid-cols-2 border-t border-border pt-1"><span>− Closing Inventory</span><span className="text-right">(€X)</span></div>
+            <div className="grid grid-cols-2 border-t border-border pt-1 font-semibold text-accent"><span>= Cost of Sales</span><span className="text-right">€X</span></div>
           </div>
           <h4 className="font-display font-semibold text-foreground">Double Entry for Closing Inventory</h4>
           <div className="bg-card border border-border rounded-lg p-4">
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Inventory (SFP — Current Asset)</span><span className="text-right">£X</span>
-              <span>Cr Statement of Profit or Loss</span><span className="text-right">£X</span>
+              <span>Dr Inventory (SFP — Current Asset)</span><span className="text-right">€X</span>
+              <span>Cr Statement of Profit or Loss</span><span className="text-right">€X</span>
             </div>
           </div>
         </div>
@@ -210,7 +250,7 @@ const sections = [
               <ul className="text-muted-foreground text-sm space-y-1.5 list-disc list-inside">
                 <li><strong>Single entry</strong> — only one side recorded</li>
                 <li><strong>Casting error</strong> — incorrect addition</li>
-                <li><strong>Transposition</strong> — digits reversed (e.g. £540 as £450)</li>
+                <li><strong>Transposition</strong> — digits reversed (e.g. €540 as €450)</li>
                 <li><strong>Extraction error</strong> — wrong figure from ledger to TB</li>
               </ul>
             </div>
