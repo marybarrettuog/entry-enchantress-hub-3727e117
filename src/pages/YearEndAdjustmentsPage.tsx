@@ -77,21 +77,21 @@ const sections = [
           </div>
         </div>
 
-        {/* Prepaid Income (Income in Advance) */}
+        {/* Deferred Income */}
         <div className="space-y-3">
-          <h4 className="font-display font-semibold text-foreground">Prepaid Income (Income in Advance)</h4>
+          <h4 className="font-display font-semibold text-foreground">Deferred Income</h4>
           <p className="text-muted-foreground">Income received <strong>in advance</strong> — the portion relating to the next period is removed from income and shown as a current liability.</p>
           <div className="bg-card border border-border rounded-lg p-4">
             <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
             <p className="text-muted-foreground text-sm mb-3">On 1 November, a business receives €1,500 for 3 months of consultancy services. Year end is 31 December — only 2 months (€1,000) relates to this year. The remaining €500 is income in advance.</p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
               <span>Dr Consultancy Income</span><span className="text-right">€500</span>
-              <span>Cr Income in Advance (Current Liability)</span><span className="text-right">€500</span>
+              <span>Cr Deferred Income (Current Liability)</span><span className="text-right">€500</span>
             </div>
             <p className="text-muted-foreground text-xs mt-2 italic">This reduces the income to €1,000 (the correct amount earned in this period).</p>
           </div>
         </div>
-        <p className="text-muted-foreground text-sm italic">Prepaid expenses are current assets; prepaid income (income in advance) is a current liability.</p>
+        <p className="text-muted-foreground text-sm italic">Prepaid expenses are current assets; deferred income is a current liability.</p>
       </div>
     ),
   },
@@ -180,7 +180,7 @@ const sections = [
             <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">Example:</span></p>
             <p className="text-muted-foreground text-sm mb-3">Trade receivables are €20,000. The business estimates 5% may be doubtful — the required allowance is €1,000. The existing allowance is €600, so an increase of €400 is needed.</p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Allowance for Doubtful Debts Adjustment</span><span className="text-right">€400</span>
+              <span>Dr Doubtful Debt Expense</span><span className="text-right">€400</span>
               <span>Cr Allowance for Doubtful Debts</span><span className="text-right">€400</span>
             </div>
           </div>
@@ -190,7 +190,7 @@ const sections = [
             <p className="text-muted-foreground text-sm mb-3">The required allowance has fallen from €1,000 to €700 — a decrease of €300.</p>
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
               <span>Dr Allowance for Doubtful Debts</span><span className="text-right">€300</span>
-              <span>Cr Allowance for Doubtful Debts Adjustment</span><span className="text-right">€300</span>
+              <span>Cr Doubtful Debt Expense</span><span className="text-right">€300</span>
             </div>
           </div>
           <p className="text-muted-foreground text-sm italic">Only the <strong>change</strong> in allowance goes to the Statement of Profit or Loss. Trade receivables on the Statement of Financial Position are shown net of the allowance.</p>
@@ -222,8 +222,8 @@ const sections = [
           <h4 className="font-display font-semibold text-foreground">Double Entry for Closing Inventory</h4>
           <div className="bg-card border border-border rounded-lg p-4">
             <div className="grid grid-cols-2 gap-2 font-mono text-sm">
-              <span>Dr Inventory (SFP — Current Asset)</span><span className="text-right">€X</span>
-              <span>Cr Statement of Profit or Loss</span><span className="text-right">€X</span>
+              <span>Dr Inventory Asset</span><span className="text-right">€X</span>
+              <span>Cr Inventory Cost of Goods Sold</span><span className="text-right">€X</span>
             </div>
           </div>
         </div>
@@ -271,6 +271,29 @@ const sections = [
             <p className="text-muted-foreground text-sm leading-relaxed">
               When the trial balance does not balance, the difference is placed in a <strong>suspense account</strong>. As errors are found and corrected, journal entries are made to clear the suspense account. Once all errors are corrected, the suspense account balance should be zero.
             </p>
+          </div>
+
+          {/* Suspense Account Example */}
+          <div className="space-y-3">
+            <h4 className="font-display font-semibold text-foreground">Suspense Account — Worked Example</h4>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">The error:</span></p>
+              <p className="text-muted-foreground text-sm mb-3">A sale of €350 was correctly debited to Trade Receivables but was credited to the Sales account as €530. The credit side is €180 more than it should be, causing the trial balance credit total to exceed the debit total by €180.</p>
+              <p className="text-muted-foreground text-sm mb-3">To make the trial balance balance temporarily, the difference of €180 is placed on the <strong>debit side</strong> of the Suspense Account.</p>
+              <div className="grid grid-cols-2 gap-2 font-mono text-sm">
+                <span>Dr Suspense Account</span><span className="text-right">€180</span>
+                <span>Cr (Balancing figure)</span><span className="text-right">€180</span>
+              </div>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <p className="font-mono text-sm mb-1"><span className="text-accent font-semibold">The correction:</span></p>
+              <p className="text-muted-foreground text-sm mb-3">Sales was overcredited by €180 (€530 instead of €350). To correct this, we debit Sales by €180 (reducing the excess credit) and credit the Suspense Account by €180 (clearing it).</p>
+              <div className="grid grid-cols-2 gap-2 font-mono text-sm">
+                <span>Dr Sales</span><span className="text-right">€180</span>
+                <span>Cr Suspense Account</span><span className="text-right">€180</span>
+              </div>
+              <p className="text-muted-foreground text-xs mt-2 italic">The suspense account now has a zero balance, and the Sales account shows the correct figure of €350.</p>
+            </div>
           </div>
         </div>
       </div>
