@@ -546,6 +546,18 @@ const YearEndAdjustmentsPage = () => {
     });
   }, []);
 
+  const openAndScrollTo = useCallback((id: string) => {
+    setOpenSections((prev) => {
+      const next = new Set(prev);
+      next.add(id);
+      return next;
+    });
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -561,9 +573,21 @@ const YearEndAdjustmentsPage = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3">
             Year-End Adjustments
           </h1>
-          <p className="text-primary-foreground/70 text-lg max-w-2xl">
+          <p className="text-primary-foreground/70 text-lg max-w-2xl mb-8">
             Before preparing the final accounts, a number of adjustments must be made to ensure the financial statements give a true and fair view.
           </p>
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
+            {sections.map(({ id, icon: Icon, title }) => (
+              <button
+                key={id}
+                onClick={() => openAndScrollTo(id)}
+                className="flex flex-col items-center gap-1.5 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg p-3 transition-colors text-center"
+              >
+                <Icon className="w-5 h-5 text-primary-foreground/80" />
+                <span className="text-xs text-primary-foreground/80 leading-tight">{title}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </header>
 
