@@ -2,9 +2,10 @@ import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, ChevronDown, Landmark, Coins, ArrowUpDown,
-  FileText, BarChart3, BookOpen, ArrowRight,
+  FileText, BarChart3, BookOpen, ArrowRight, HelpCircle, ArrowUp,
 } from "lucide-react";
 import StickyNav from "@/components/StickyNav";
+import CompanyAccountsQuiz from "@/components/CompanyAccountsQuiz";
 
 const companyNavItems = [
   { id: "share-capital", label: "Capital" },
@@ -14,7 +15,7 @@ const companyNavItems = [
   { id: "sofp", label: "SFP" },
   { id: "socie", label: "Equity" },
   { id: "worked-example", label: "Example" },
-  
+  { id: "quiz", label: "Quiz" },
 ];
 
 const sections = [
@@ -538,6 +539,17 @@ const sections = [
           </div>
           <p className="text-muted-foreground text-sm italic text-center">Total Assets (€159,000) = Total Equity &amp; Liabilities (€159,000) — the statement balances.</p>
         </div>
+      </div>
+    ),
+  },
+  {
+    id: "quiz",
+    icon: HelpCircle,
+    title: "Test Your Knowledge",
+    desc: "Quiz on share capital, double entries and IFRS financial statements",
+    content: (
+      <div className="p-6 md:p-8">
+        <CompanyAccountsQuiz />
       </div>
     ),
   },
