@@ -606,7 +606,7 @@ const YearEndAdjustmentsPage = () => {
             })}
           </div>
         </div>
-
+      </section>
 
       {/* Footer nav */}
       <div className="border-t border-border py-8">
