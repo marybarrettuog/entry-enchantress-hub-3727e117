@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
+import YearEndAdjustmentsPage from "./pages/YearEndAdjustmentsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/year-end-adjustments" element={<YearEndAdjustmentsPage />} />
           {/* Redirect old topic routes to home */}
           <Route path="/concepts" element={<Navigate to="/" replace />} />
           <Route path="/equation" element={<Navigate to="/" replace />} />

@@ -13,9 +13,10 @@ import AccountingCycleOrder from "@/components/AccountingCycleOrder";
 import ClassificationQuiz from "@/components/ClassificationQuiz";
 import PracticeExamples from "@/components/PracticeExamples";
 import InteractiveQuiz from "@/components/InteractiveQuiz";
+import { Link } from "react-router-dom";
 import {
   BookOpen, Scale, CreditCard, LayoutGrid, ClipboardList,
-  FileText, ArrowRightLeft, BrainCircuit, ChevronDown,
+  FileText, ArrowRightLeft, BrainCircuit, ChevronDown, ArrowRight,
 } from "lucide-react";
 
 const topics = [
@@ -139,6 +140,25 @@ const Index = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Link to Year-End Adjustments */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-6 max-w-5xl text-center">
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
+            Ready for More?
+          </h2>
+          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+            Once you're comfortable with the basics, explore year-end adjustments — accruals, prepayments, depreciation, and more.
+          </p>
+          <Link
+            to="/year-end-adjustments"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors"
+          >
+            Year-End Adjustments
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
