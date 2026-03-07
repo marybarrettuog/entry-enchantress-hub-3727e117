@@ -553,6 +553,149 @@ const YearEndAdjustmentsPage = () => {
             </div>
             <p className="text-muted-foreground text-sm italic text-center">The revised trial balance still balances — confirming that all adjustment entries have been recorded correctly with equal debits and credits.</p>
           </div>
+
+          {/* Step 5 — Statement of Profit or Loss */}
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-foreground text-lg flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold">5</span>
+              Statement of Profit or Loss
+            </h3>
+            <div className="bg-card border border-border rounded-xl overflow-hidden">
+              <div className="bg-muted/60 border-b border-border p-3">
+                <p className="font-mono font-semibold text-foreground text-sm text-center">Statement of Profit or Loss for the year ended 31 December</p>
+              </div>
+              <div className="p-4 md:p-6 font-mono text-sm space-y-1">
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4">
+                  <span className="font-semibold text-foreground">Revenue</span><span></span><span className="text-right">52,000</span>
+                </div>
+                <div className="pt-2 pb-1"><span className="font-semibold text-foreground">Cost of Sales</span></div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Opening Inventory</span><span className="text-right">3,000</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Purchases</span><span className="text-right">28,000</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4 border-t border-border pt-1">
+                  <span></span><span className="text-right">31,000</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Less: Closing Inventory</span><span className="text-right">(4,200)</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1">
+                  <span className="pl-4"></span><span></span><span className="text-right">(26,800)</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent">
+                  <span>Gross Profit</span><span></span><span className="text-right">25,200</span>
+                </div>
+                <div className="pt-3 pb-1"><span className="font-semibold text-foreground">Less: Expenses</span></div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Rent</span><span className="text-right">4,800</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Insurance</span><span className="text-right">1,800</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Wages</span><span className="text-right">12,800</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Depreciation</span><span className="text-right">1,000</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Irrecoverable Debts</span><span className="text-right">500</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 pl-4">
+                  <span>Doubtful Debt Expense</span><span className="text-right">250</span><span></span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t border-border pt-1">
+                  <span className="pl-4"></span><span></span><span className="text-right">(21,150)</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent">
+                  <span>Net Profit</span><span></span><span className="text-right">4,050</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 6 — Statement of Financial Position */}
+          <div className="space-y-4">
+            <h3 className="font-display font-semibold text-foreground text-lg flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold">6</span>
+              Statement of Financial Position
+            </h3>
+            <div className="bg-card border border-border rounded-xl overflow-hidden">
+              <div className="bg-muted/60 border-b border-border p-3">
+                <p className="font-mono font-semibold text-foreground text-sm text-center">Statement of Financial Position as at 31 December</p>
+              </div>
+              <div className="p-4 md:p-6 font-mono text-sm space-y-1">
+                <div className="pb-1"><span className="font-semibold text-foreground">Non-Current Assets</span></div>
+                <div className="grid grid-cols-[1fr_auto_auto_auto] gap-x-4 pl-4">
+                  <span></span><span className="text-right text-muted-foreground text-xs">Cost</span><span className="text-right text-muted-foreground text-xs">Acc. Dep.</span><span className="text-right text-muted-foreground text-xs">NBV</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto_auto_auto] gap-x-4 pl-4">
+                  <span>Equipment</span><span className="text-right">10,000</span><span className="text-right">(3,000)</span><span className="text-right">7,000</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 mt-1">
+                  <span className="font-semibold">Total Non-Current Assets</span><span className="text-right font-semibold">7,000</span>
+                </div>
+
+                <div className="pt-4 pb-1"><span className="font-semibold text-foreground">Current Assets</span></div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Inventory</span><span className="text-right">4,200</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Trade Receivables (€7,500 − €750)</span><span className="text-right">6,750</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Prepaid Expenses</span><span className="text-right">600</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Bank</span><span className="text-right">2,500</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 mt-1">
+                  <span className="font-semibold">Total Current Assets</span><span className="text-right font-semibold">14,050</span>
+                </div>
+
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 mt-2 font-semibold text-accent">
+                  <span>Total Assets</span><span className="text-right">21,050</span>
+                </div>
+
+                <div className="pt-6 pb-1"><span className="font-semibold text-foreground">Capital</span></div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Opening Capital</span><span className="text-right">15,000</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Add: Net Profit</span><span className="text-right">4,050</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Less: Drawings</span><span className="text-right">(6,000)</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 mt-1">
+                  <span className="font-semibold">Closing Capital</span><span className="text-right font-semibold">13,050</span>
+                </div>
+
+                <div className="pt-4 pb-1"><span className="font-semibold text-foreground">Non-Current Liabilities</span></div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Loan</span><span className="text-right">2,000</span>
+                </div>
+
+                <div className="pt-4 pb-1"><span className="font-semibold text-foreground">Current Liabilities</span></div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Trade Payables</span><span className="text-right">5,200</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 pl-4">
+                  <span>Accrued Expenses</span><span className="text-right">800</span>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-border pt-1 mt-1">
+                  <span className="font-semibold">Total Current Liabilities</span><span className="text-right font-semibold">6,000</span>
+                </div>
+
+                <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 mt-2 font-semibold text-accent">
+                  <span>Total Capital &amp; Liabilities</span><span className="text-right">21,050</span>
+                </div>
+              </div>
+            </div>
+            <p className="text-muted-foreground text-sm italic text-center">Total Assets (€21,050) = Total Capital &amp; Liabilities (€21,050) — the statement balances.</p>
+          </div>
         </div>
       </section>
 
