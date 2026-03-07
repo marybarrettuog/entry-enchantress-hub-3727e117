@@ -2,6 +2,19 @@ import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ChevronDown, Calendar, TrendingDown, AlertTriangle, Package, Shield, PenTool, BookOpen, Brain } from "lucide-react";
 import YearEndQuiz from "@/components/YearEndQuiz";
+import StickyNav from "@/components/StickyNav";
+
+const yearEndNavItems = [
+  { id: "accruals", label: "Accruals" },
+  { id: "prepayments", label: "Prepayments" },
+  { id: "depreciation", label: "Depreciation" },
+  { id: "bad-debts", label: "Bad Debts" },
+  { id: "allowance-doubtful", label: "Allowance" },
+  { id: "closing-inventory", label: "Inventory" },
+  { id: "correction-errors", label: "Errors" },
+  { id: "worked-example", label: "Example" },
+  { id: "quiz", label: "Quiz" },
+];
 
 const sections = [
   {
@@ -560,6 +573,8 @@ const YearEndAdjustmentsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <StickyNav onNavigate={openAndScrollTo} items={yearEndNavItems} title="Year-End" />
+
       {/* Header */}
       <header className="bg-primary text-primary-foreground py-12 md:py-16">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -573,21 +588,9 @@ const YearEndAdjustmentsPage = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-3">
             Year-End Adjustments
           </h1>
-          <p className="text-primary-foreground/70 text-lg max-w-2xl mb-8">
+          <p className="text-primary-foreground/70 text-lg max-w-2xl">
             Before preparing the final accounts, a number of adjustments must be made to ensure the financial statements give a true and fair view.
           </p>
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
-            {sections.map(({ id, icon: Icon, title }) => (
-              <button
-                key={id}
-                onClick={() => openAndScrollTo(id)}
-                className="flex flex-col items-center gap-1.5 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg p-3 transition-colors text-center"
-              >
-                <Icon className="w-5 h-5 text-primary-foreground/80" />
-                <span className="text-xs text-primary-foreground/80 leading-tight">{title}</span>
-              </button>
-            ))}
-          </div>
         </div>
       </header>
 
