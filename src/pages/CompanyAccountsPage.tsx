@@ -208,6 +208,30 @@ const sections = [
             <div className="grid grid-cols-[1fr_auto] gap-x-4 border-t-2 border-accent pt-2 font-semibold text-accent"><span>Profit for the Year</span><span className="text-right">€X</span></div>
           </div>
         </div>
+
+        <div className="space-y-4">
+          <h4 className="font-display font-semibold text-foreground">What's Included in Each Heading?</h4>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Distribution Costs</h5>
+              <p className="text-muted-foreground text-sm">
+                Costs of getting goods to customers: delivery and transport expenses, warehouse costs, sales staff salaries and commissions, advertising and marketing, and depreciation on distribution vehicles or equipment.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Administrative Expenses</h5>
+              <p className="text-muted-foreground text-sm">
+                General overhead costs of running the business: office rent and utilities, management salaries, accounting and legal fees, office supplies, insurance, depreciation on office equipment, and doubtful debt expenses.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">Finance Costs</h5>
+              <p className="text-muted-foreground text-sm">
+                Costs of borrowing: interest on bank loans and overdrafts, interest on loan notes (debentures), and interest on lease liabilities. These are shown separately from operating expenses as they relate to how the business is financed rather than its trading operations.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     ),
   },
