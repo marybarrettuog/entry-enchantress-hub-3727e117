@@ -635,6 +635,25 @@ const YearEndAdjustmentsPage = () => {
         </div>
       </section>
 
+      {/* CTA to Company Accounts */}
+      <section className="py-12 md:py-16 bg-muted/30 border-t border-border">
+        <div className="container mx-auto px-6 max-w-5xl text-center">
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
+            Ready for More?
+          </h2>
+          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+            Move on to company accounts — share capital, IFRS financial statements and the statement of changes in equity.
+          </p>
+          <Link
+            to="/company-accounts"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors"
+          >
+            Company Accounts
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
       {/* Footer nav */}
       <div className="border-t border-border py-8">
         <div className="container mx-auto px-6 max-w-5xl flex justify-center">

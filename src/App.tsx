@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import YearEndAdjustmentsPage from "./pages/YearEndAdjustmentsPage";
+import CompanyAccountsPage from "./pages/CompanyAccountsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/year-end-adjustments" element={<YearEndAdjustmentsPage />} />
+          <Route path="/company-accounts" element={<CompanyAccountsPage />} />
           {/* Redirect old topic routes to home */}
           <Route path="/concepts" element={<Navigate to="/" replace />} />
           <Route path="/equation" element={<Navigate to="/" replace />} />
