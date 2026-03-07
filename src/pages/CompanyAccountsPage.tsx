@@ -2,12 +2,13 @@ import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, ChevronDown, Landmark, Coins, ArrowUpDown,
-  FileText, BarChart3, BookOpen, ArrowRight, HelpCircle, ArrowUp,
+  FileText, BarChart3, BookOpen, ArrowRight, HelpCircle, ArrowUp, Building2,
 } from "lucide-react";
 import StickyNav from "@/components/StickyNav";
 import CompanyAccountsQuiz from "@/components/CompanyAccountsQuiz";
 
 const companyNavItems = [
+  { id: "why-companies", label: "Why?" },
   { id: "share-capital", label: "Capital" },
   { id: "issuing-shares", label: "Issuing" },
   { id: "share-buybacks", label: "Buybacks" },
@@ -19,6 +20,108 @@ const companyNavItems = [
 ];
 
 const sections = [
+  {
+    id: "why-companies",
+    icon: Building2,
+    title: "Why Are Companies Formed?",
+    desc: "The purpose of incorporation, types of companies in Ireland and legal obligations",
+    content: (
+      <div className="p-6 md:p-8 space-y-8">
+        <div className="bg-muted/40 rounded-lg p-5 border border-border">
+          <h4 className="font-display font-semibold text-foreground mb-2">Why Incorporate?</h4>
+          <p className="text-muted-foreground leading-relaxed">
+            A company is a <strong>separate legal entity</strong> — distinct from its owners (shareholders). Forming a company provides key advantages:
+          </p>
+          <ul className="list-disc list-inside text-muted-foreground mt-2 space-y-1 text-sm">
+            <li><strong>Limited liability</strong> — shareholders' personal assets are protected; their risk is limited to the amount invested.</li>
+            <li><strong>Perpetual succession</strong> — the company continues to exist regardless of changes in ownership.</li>
+            <li><strong>Access to capital</strong> — companies can raise finance by issuing shares to investors.</li>
+            <li><strong>Transferability of ownership</strong> — shares can be bought and sold (particularly in public companies).</li>
+            <li><strong>Credibility</strong> — incorporation can enhance trust with customers, suppliers and lenders.</li>
+          </ul>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="font-display font-semibold text-foreground">Types of Companies in Ireland</h4>
+          <p className="text-muted-foreground text-sm">
+            The Companies Act 2014 sets out the company types registered with the Companies Registration Office (CRO):
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">LTD — Private Company Limited by Shares</h5>
+              <p className="text-muted-foreground text-sm">
+                The most common type. Has its own constitution (one-document). Limited to 149 shareholders. Cannot offer shares to the public. Ideal for small and medium businesses.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">DAC — Designated Activity Company</h5>
+              <p className="text-muted-foreground text-sm">
+                Has a two-document constitution (memorandum and articles of association) with a defined objects clause. Often used for special purpose vehicles, joint ventures and regulated entities.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">PLC — Public Limited Company</h5>
+              <p className="text-muted-foreground text-sm">
+                Can offer shares to the public and may be listed on a stock exchange. Must have a minimum issued share capital of €25,000 (at least 25% paid up). Subject to stricter governance and disclosure requirements.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-4">
+              <h5 className="font-semibold text-foreground mb-1 text-sm">CLG — Company Limited by Guarantee</h5>
+              <p className="text-muted-foreground text-sm">
+                Has no share capital. Members guarantee to contribute a nominal amount if the company is wound up. Common for charities, clubs and not-for-profit organisations.
+              </p>
+            </div>
+          </div>
+          <div className="bg-card border border-border rounded-lg p-4">
+            <h5 className="font-semibold text-foreground mb-1 text-sm">ULC — Unlimited Company</h5>
+            <p className="text-muted-foreground text-sm">
+              Members have <strong>unlimited liability</strong> for the company's debts. Rarely used, but offers the advantage of not being required to file financial statements publicly with the CRO.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="font-display font-semibold text-foreground">Legal Obligations — Books of Account</h4>
+          <div className="bg-muted/40 rounded-lg p-5 border border-border">
+            <p className="text-muted-foreground leading-relaxed text-sm">
+              Under <strong>Section 281 of the Companies Act 2014</strong>, every company must keep <strong>adequate accounting records</strong> that:
+            </p>
+            <ul className="list-disc list-inside text-muted-foreground mt-2 space-y-1 text-sm">
+              <li>Correctly record and explain all transactions of the company</li>
+              <li>Enable the financial position of the company to be determined at any time with reasonable accuracy</li>
+              <li>Enable the directors to prepare financial statements that give a <strong>true and fair view</strong></li>
+              <li>Enable those financial statements to be readily and properly audited</li>
+            </ul>
+            <p className="text-muted-foreground mt-3 text-sm">
+              Records must include: entries of all money received and expended, a record of assets and liabilities, and (where relevant) records of stock/inventory. Books must be kept at the registered office or another place in the State and retained for <strong>at least 6 years</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="font-display font-semibold text-foreground">Filing Obligations</h4>
+          <div className="bg-muted/40 rounded-lg p-5 border border-border">
+            <p className="text-muted-foreground leading-relaxed text-sm">
+              Companies must file their <strong>annual return</strong> (including financial statements) with the CRO:
+            </p>
+            <ul className="list-disc list-inside text-muted-foreground mt-2 space-y-1 text-sm">
+              <li><strong>Annual Return Date (ARD)</strong> — every company has an ARD. The annual return must be filed within <strong>56 days</strong> of the ARD.</li>
+              <li><strong>Financial statements</strong> must be attached, prepared in accordance with the Companies Act 2014 and applicable accounting standards (FRS 102 or IFRS as adopted by the EU).</li>
+              <li><strong>Audit requirement</strong> — most companies must have their accounts audited, though small companies meeting certain thresholds may qualify for an <strong>audit exemption</strong>.</li>
+              <li><strong>Late filing penalties</strong> — failure to file on time results in penalties and the loss of the audit exemption for two years.</li>
+              <li><strong>Revenue Commissioners</strong> — companies must also file a Corporation Tax return (CT1) annually.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-accent/10 border border-accent/30 rounded-lg p-5">
+          <p className="text-foreground text-sm">
+            <strong>Key takeaway:</strong> The obligation to maintain proper books of account is not optional — it is a legal requirement. Directors who fail to ensure adequate records are kept may be held <strong>personally liable</strong> and face criminal penalties under the Companies Act 2014.
+          </p>
+        </div>
+      </div>
+    ),
+  },
   {
     id: "share-capital",
     icon: Landmark,
