@@ -153,6 +153,24 @@ const StickyNav = ({ onNavigate, items, title = "Basics of Book-Keeping" }: Stic
       </button>
       {openDropdown === key && (
         <div className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-lg py-1 min-w-[220px] animate-fade-in-up z-50" style={{ animationDuration: "0.15s" }}>
+          <button
+            key={`${key}-page`}
+            onClick={() => {
+              if (isCurrentPage) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.location.href = path;
+              }
+              setMobileOpen(false);
+              setOpenDropdown(null);
+            }}
+            className={`w-full text-left px-4 py-2 text-sm font-bold transition-colors ${
+              isCurrentPage ? "text-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+            }`}
+          >
+            {label}
+          </button>
+          <div className="h-px bg-border mx-2 my-1" />
           {ddItems.map(({ id, label: itemLabel }) => (
             <button
               key={`${key}-${id}`}
@@ -194,6 +212,20 @@ const StickyNav = ({ onNavigate, items, title = "Basics of Book-Keeping" }: Stic
       </button>
       {mobileExpanded === key && (
         <div className="flex flex-col gap-0.5 pl-2">
+          <button
+            onClick={() => {
+              if (isCurrentPage) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.location.href = path;
+              }
+              setMobileOpen(false);
+            }}
+            className="text-left px-4 py-2 rounded-md text-sm font-bold text-foreground"
+          >
+            {label}
+          </button>
+          <div className="h-px bg-border mx-2 my-0.5" />
           {ddItems.map(({ id, label: itemLabel }) => (
             <button
               key={`${key}-mob-${id}`}
