@@ -84,13 +84,7 @@ const ConceptCards = () => (
             <c.icon className="w-6 h-6 text-accent" />
           </div>
           <h3 className="text-lg font-display font-semibold text-foreground mb-2">{c.title}</h3>
-          <p className="text-muted-foreground text-sm leading-relaxed mb-3">{c.description}</p>
-          <Link
-            to={c.linkTo}
-            className="mt-auto text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
-          >
-            {c.linkLabel}
-          </Link>
+          <p className="text-muted-foreground text-sm leading-relaxed">{c.description}</p>
         </div>
       ))}
     </div>
