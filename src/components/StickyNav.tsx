@@ -212,6 +212,20 @@ const StickyNav = ({ onNavigate, items, title = "Basics of Book-Keeping" }: Stic
       </button>
       {mobileExpanded === key && (
         <div className="flex flex-col gap-0.5 pl-2">
+          <button
+            onClick={() => {
+              if (isCurrentPage) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.location.href = path;
+              }
+              setMobileOpen(false);
+            }}
+            className="text-left px-4 py-2 rounded-md text-sm font-bold text-foreground"
+          >
+            {label}
+          </button>
+          <div className="h-px bg-border mx-2 my-0.5" />
           {ddItems.map(({ id, label: itemLabel }) => (
             <button
               key={`${key}-mob-${id}`}
