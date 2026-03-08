@@ -19,7 +19,7 @@ const TrialBalance = () => {
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">Bringing It Together</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Trial Balance</h2>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-            The trial balance lists every account's closing balance to verify that total debits equal total credits. These figures are carried forward from the T-accounts on the previous page.
+            The trial balance lists every account's closing balance to verify that total debits equal total credits. These figures are carried forward from the T-accounts above.
           </p>
         </div>
 
